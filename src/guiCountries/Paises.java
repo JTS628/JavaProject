@@ -2,6 +2,7 @@
 package guiCountries;
 
 import java.sql.*;
+import java.util.ArrayList;
 import javax.swing.JOptionPane;
 
 
@@ -10,7 +11,7 @@ public class Paises extends javax.swing.JFrame {
     Connection con = null;
     PreparedStatement pst = null;
     ResultSet rs = null;
-    
+    ArrayList listaPaises = new ArrayList ();
        
     public Paises() {
         initComponents();
@@ -19,7 +20,7 @@ public class Paises extends javax.swing.JFrame {
         //tarifa ();
     }
     
-    private void combobox ()
+    /*private void combobox ()
     {
         try{
             con = DriverManager.getConnection("jdbc:mysql://localhost/project","root","*CuT1eza123*");
@@ -31,18 +32,60 @@ public class Paises extends javax.swing.JFrame {
             {
             String name = rs.getString("Pais");
             jComboBox2.addItem(name);
-            
-            
+                 
             }
-            
-        
-        }catch (Exception ex){
+            }catch (Exception ex){
         
             JOptionPane.showMessageDialog(null, ex);
         }
+        
+    }*/
+   
+    public void combolista(){
+    
+            listaPaises.add("Argentina");
+            listaPaises.add("Belize");
+            listaPaises.add("Bolivia");
+            listaPaises.add("Brazil");
+            listaPaises.add("Canada");
+            listaPaises.add("Chile");
+            listaPaises.add("China");
+            listaPaises.add("Colombia");
+            listaPaises.add("Cuba");
+            listaPaises.add("Ecuador");
+            listaPaises.add("El Salvador");
+            listaPaises.add("Estados unidos");
+            listaPaises.add("Francia");
+            listaPaises.add("Guatemala");
+            listaPaises.add("Italia");
+            listaPaises.add("Jamaica");
+            listaPaises.add("Japan");
+            listaPaises.add("Nigeria");
+            listaPaises.add("Sweden");
+            listaPaises.add("Uruguay");
+         
+   
+    }
+    
+    
+    public void llenarcombopais(){
+        
+        for (i =0 ; i > listaPaises.){
+        
+        } 
+            
+           
+    
+    
+    
     
     
     }
+    
+    
+    
+    
+    
             
         private void servicio ()
     {
@@ -300,7 +343,7 @@ public class Paises extends javax.swing.JFrame {
                 .addComponent(jLabel2)
                 .addGap(167, 167, 167)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jComboBox2, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jComboBox2, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(lblpais, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(54, 54, 54)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -366,7 +409,8 @@ public class Paises extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jComboBox2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox2ActionPerformed
-        // TODO add your handling code here:
+             
+        
     }//GEN-LAST:event_jComboBox2ActionPerformed
 
     private void jComboBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox1ActionPerformed
