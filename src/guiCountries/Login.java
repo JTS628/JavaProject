@@ -151,6 +151,9 @@ public class Login extends javax.swing.JFrame {
         Registro view = new Registro();
         view.setVisible(true);
         dispose();
+        
+        
+        
     }//GEN-LAST:event_btnRegistroActionPerformed
 
     private void btnIngresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnIngresarActionPerformed

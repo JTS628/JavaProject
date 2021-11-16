@@ -11,12 +11,14 @@ public class Paises extends javax.swing.JFrame {
     Connection con = null;
     PreparedStatement pst = null;
     ResultSet rs = null;
-    ArrayList listaPaises = new ArrayList ();
+    ArrayList <String> listaPaises = new ArrayList <>();
        
     public Paises() {
         initComponents();
-        combobox ();
-        servicio ();
+        listapais ();
+        listaservicio ();
+        //combobox ();
+        //servicio ();
         //tarifa ();
         this.setLocationRelativeTo(null);
         this.setTitle("Transferencias De Dinero");
@@ -33,63 +35,15 @@ public class Paises extends javax.swing.JFrame {
             while(rs.next())
             {
             String name = rs.getString("Pais");
-            jComboBox2.addItem(name);
+            listaP.addItem(name);
                  
             }
             }catch (Exception ex){
         
             JOptionPane.showMessageDialog(null, ex);
         }
-        
-    }*/
-   
-    public void combolista(){
-    
-            listaPaises.add("Argentina");
-            listaPaises.add("Belize");
-            listaPaises.add("Bolivia");
-            listaPaises.add("Brazil");
-            listaPaises.add("Canada");
-            listaPaises.add("Chile");
-            listaPaises.add("China");
-            listaPaises.add("Colombia");
-            listaPaises.add("Cuba");
-            listaPaises.add("Ecuador");
-            listaPaises.add("El Salvador");
-            listaPaises.add("Estados unidos");
-            listaPaises.add("Francia");
-            listaPaises.add("Guatemala");
-            listaPaises.add("Italia");
-            listaPaises.add("Jamaica");
-            listaPaises.add("Japan");
-            listaPaises.add("Nigeria");
-            listaPaises.add("Sweden");
-            listaPaises.add("Uruguay");
-         
-   
-    }
-    
-    
-    public void llenarcombopais(){
-        
-        for (i =0 ; i > listaPaises.){
-        
-        } 
-            
-           
-    
-    
-    
-    
-    
-    }
-    
-    
-    
-    
-    
-            
-        private void servicio ()
+}
+private void servicio ()
     {
         try{
             con = DriverManager.getConnection("jdbc:mysql://localhost/project","root","*CuT1eza123*");
@@ -100,7 +54,7 @@ public class Paises extends javax.swing.JFrame {
             while(rs.next())
             {
             String name = rs.getString("NombreServicio");
-            jComboBox1.addItem(name);
+            listaS.addItem(name);
             
             
             }
@@ -111,15 +65,63 @@ public class Paises extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null, ex);
         }
     
+    }*/
+     
+    public void listapais (){
+    
+        ArrayList pais = new ArrayList ();
+        
+        pais.add("Argentina");
+        pais.add("Belize");
+        pais.add("Bolivia");
+        pais.add("Brazil");
+        pais.add("Canada");
+        pais.add("Chile");
+        pais.add("China");
+        pais.add("Colombia");
+        pais.add("Costa Rica");
+        pais.add("Cuba");
+        pais.add("Ecuador");
+        pais.add("El Salvador");
+        pais.add("Estados unidos");
+        pais.add("Francia");
+        pais.add("Guatemala");
+        pais.add("Italia");
+        pais.add("Jamaica");
+        pais.add("Japan");
+        pais.add("Mexico");
+        pais.add("Nigeria");
+        pais.add("Sweden");
+        pais.add("Uruguay");
+       
+        int i;
+        for (i = 0 ; i < pais.size(); i++)            
+        {listaP.addItem(pais.get(i) + "");
+      
+        }
     }
-            
+        
+    public void listaservicio () {
+    
+    ArrayList servicio = new ArrayList ();
+    
+    servicio.add("Inmediato");
+    servicio.add("Dia siguiente");
+    int i;
+    for (i=0; i < servicio.size(); i++){
+        listaS.addItem(servicio.get(i) + "");
+        
+    }
+}
+    
+   
     private void tarifa (){
         
                     
         int v = Integer.parseInt(txtmonto.getText());
         int tar;
         
-        String tipo = (String) jComboBox1.getSelectedItem();
+        String tipo = (String) listaS.getSelectedItem();
         
         if (tipo.equals("Inmediato")){
         
@@ -191,9 +193,9 @@ public class Paises extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         jPanel2 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
-        jComboBox2 = new javax.swing.JComboBox<>();
+        listaP = new javax.swing.JComboBox<>();
         lblpais = new javax.swing.JLabel();
-        jComboBox1 = new javax.swing.JComboBox<>();
+        listaS = new javax.swing.JComboBox<>();
         jLabel1 = new javax.swing.JLabel();
         txtmonto = new javax.swing.JTextField();
         lblmonto = new javax.swing.JLabel();
@@ -220,10 +222,10 @@ public class Paises extends javax.swing.JFrame {
         jLabel2.setForeground(new java.awt.Color(255, 255, 0));
         jLabel2.setText("Plataforma de envio de dinero");
 
-        jComboBox2.setToolTipText("");
-        jComboBox2.addActionListener(new java.awt.event.ActionListener() {
+        listaP.setToolTipText("");
+        listaP.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jComboBox2ActionPerformed(evt);
+                listaPActionPerformed(evt);
             }
         });
 
@@ -231,9 +233,9 @@ public class Paises extends javax.swing.JFrame {
         lblpais.setForeground(new java.awt.Color(204, 204, 204));
         lblpais.setText("Paises destino: ");
 
-        jComboBox1.addActionListener(new java.awt.event.ActionListener() {
+        listaS.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jComboBox1ActionPerformed(evt);
+                listaSActionPerformed(evt);
             }
         });
 
@@ -321,8 +323,8 @@ public class Paises extends javax.swing.JFrame {
                                     .addComponent(btnrefrescar, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(txttotal, javax.swing.GroupLayout.PREFERRED_SIZE, 245, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(txtmonto, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jComboBox2, javax.swing.GroupLayout.PREFERRED_SIZE, 232, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                    .addComponent(listaS, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(listaP, javax.swing.GroupLayout.PREFERRED_SIZE, 232, javax.swing.GroupLayout.PREFERRED_SIZE)))
                             .addGroup(jPanel2Layout.createSequentialGroup()
                                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(jPanel2Layout.createSequentialGroup()
@@ -341,12 +343,12 @@ public class Paises extends javax.swing.JFrame {
                 .addComponent(jLabel2)
                 .addGap(50, 50, 50)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jComboBox2, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(listaP, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(lblpais, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(54, 54, 54)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(listaS, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(62, 62, 62)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(txtmonto, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -408,14 +410,14 @@ public class Paises extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jComboBox2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox2ActionPerformed
+    private void listaPActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_listaPActionPerformed
              
         
-    }//GEN-LAST:event_jComboBox2ActionPerformed
+    }//GEN-LAST:event_listaPActionPerformed
 
-    private void jComboBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox1ActionPerformed
+    private void listaSActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_listaSActionPerformed
       
-    }//GEN-LAST:event_jComboBox1ActionPerformed
+    }//GEN-LAST:event_listaSActionPerformed
 
     private void txttarifaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txttarifaActionPerformed
         // TODO add your handling code here:
@@ -483,8 +485,6 @@ public class Paises extends javax.swing.JFrame {
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
-    private javax.swing.JComboBox<String> jComboBox1;
-    private javax.swing.JComboBox<String> jComboBox2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
@@ -493,6 +493,8 @@ public class Paises extends javax.swing.JFrame {
     private javax.swing.JLabel lblmonto1;
     private javax.swing.JLabel lblmonto2;
     private javax.swing.JLabel lblpais;
+    private javax.swing.JComboBox<String> listaP;
+    private javax.swing.JComboBox<String> listaS;
     private javax.swing.JTextField txtmonto;
     private javax.swing.JTextField txttarifa;
     private javax.swing.JTextField txttotal;

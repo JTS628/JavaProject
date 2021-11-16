@@ -1,62 +1,65 @@
-
 package guiCountries;
 
-import Countries.Usuarios;
 import java.sql.*;
 import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.Set;
 import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
+
 
 public class Registro extends javax.swing.JFrame {
-    Connection con = null;
+    /*Connection con = null;
     PreparedStatement pst = null;
     ResultSet rs = null;
-   
-    ArrayList<Usuarios> datos = new ArrayList<Usuarios>();
+    ArrayList<Usuarios> datos = new ArrayList<Usuarios>();*/
     
+    ArrayList <Usuarios> listaUsuarios = new ArrayList();
+    DefaultTableModel t = new DefaultTableModel();
+     
     public Registro() {
         initComponents();
+        tablaUsuarios.setModel(t);
+            t.addColumn("Nombre");
+            t.addColumn("Apellido");
+            t.addColumn("Correo");
+            t.addColumn("Usuario");
+            t.addColumn("Contraseña");
+            t.addColumn("Dia");
+            t.addColumn("Mes");
+            t.addColumn("Año");
+        //Addregistro();
         this.setLocationRelativeTo(null);
         this.setTitle("Registro de Usuarios");
         
     }
-    
-    private void registro(){
-        
-        String nombre = txtnombre.getText();
-        String apellido = txtapellido.getText();
-        String correo = txtcorreo.getText();
-        String usuario = txtusuario.getText();
-        String contrasena = txtcontrasena.getText();
-        String dia = txtdia.getText();
-        String mes = txtdia.getText();
-        String ano = txtdia.getText();
-        
-        
-        try {
-        con = DriverManager.getConnection("jdbc:mysql://localhost/project","root","*CuT1eza123*");
-        String sql = "INSERT INTO registro values('"+nombre+"','"+apellido+"','"+correo+"','"+usuario+"','"+contrasena+"','"+dia+"','"+mes+"','"+ano+"')";
-        
-        Statement sta = con.createStatement();
-        int x = sta.executeUpdate(sql);
-        if (x==0) {
-            JOptionPane.showMessageDialog(btregistro, "Usuario ya existe");
-        }else {
-            JOptionPane.showMessageDialog(btregistro, "Usuario creado con exito");
-        }
-        con.close();
-                   
-        }catch(Exception e){
-        e.printStackTrace();};
-    
-        
-    }
    
+    public void cargarTabla (){
+        t.setRowCount(0);
+                
+        for (int i=0 ; i < listaUsuarios.size(); i++ ){
+            t.addRow(new Object[]{
+                listaUsuarios.get(i).getNombre(),
+                listaUsuarios.get(i).getApellido(),
+                listaUsuarios.get(i).getCorreo(),
+                listaUsuarios.get(i).getUsuario(),
+                listaUsuarios.get(i).getContrasena(),
+                listaUsuarios.get(i).getDia(),
+                listaUsuarios.get(i).getMes(),
+                listaUsuarios.get(i).getAno(),
+        });
+        }    
+ }
+    
+    
     
     
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jTable1 = new javax.swing.JTable();
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
@@ -81,6 +84,21 @@ public class Registro extends javax.swing.JFrame {
         jButton1 = new javax.swing.JButton();
         btregistro = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        tablaUsuarios = new javax.swing.JTable();
+
+        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "Title 1", "Title 2", "Title 3", "Title 4"
+            }
+        ));
+        jScrollPane1.setViewportView(jTable1);
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -187,7 +205,7 @@ public class Registro extends javax.swing.JFrame {
                                     .addComponent(jLabel13, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(jLabel15)
                                     .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, 162, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 77, Short.MAX_VALUE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                     .addComponent(txtnombre, javax.swing.GroupLayout.Alignment.TRAILING)
                                     .addComponent(txtapellido, javax.swing.GroupLayout.Alignment.TRAILING)
@@ -247,20 +265,36 @@ public class Registro extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
+        tablaUsuarios.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+
+            }
+        ));
+        jScrollPane2.setViewportView(tablaUsuarios);
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+            .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 604, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(59, 59, 59)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 701, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(45, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(45, 45, 45)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 551, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
 
         pack();
@@ -271,8 +305,41 @@ public class Registro extends javax.swing.JFrame {
     }//GEN-LAST:event_txtapellidoActionPerformed
 
     private void btregistroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btregistroActionPerformed
+    
+        String nombre = txtnombre.getText();
+        String apellido = txtapellido.getText();
+        String correo = txtcorreo.getText();
+        String usuario = txtusuario.getText();
+        String contrasena = txtcontrasena.getText();
+        String dia = txtdia.getText();
+        String mes = txtmes.getText();
+        String ano = txtano.getText();
+       
+        Usuarios usu = new Usuarios();
         
-        registro();
+        usu.setNombre(nombre);
+        usu.setApellido(apellido);
+        usu.setCorreo(correo);
+        usu.setUsuario(usuario);
+        usu.setContrasena(contrasena);
+        usu.setDia(dia);
+        usu.setMes(mes);
+        usu.setAno(ano);
+       
+        
+        listaUsuarios.add(usu);
+        
+        cargarTabla ();
+                
+        txtnombre.setText("");
+        txtapellido.setText("");
+        txtcorreo.setText("");
+        txtusuario.setText("");
+        txtcontrasena.setText("");
+        txtdia.setText("");
+        txtmes.setText("");
+        txtano.setText("");
+        
         
                
     }//GEN-LAST:event_btregistroActionPerformed
@@ -338,6 +405,10 @@ public class Registro extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel18;
     private javax.swing.JLabel jLabel19;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JTable jTable1;
+    private javax.swing.JTable tablaUsuarios;
     private javax.swing.JTextField txtano;
     private javax.swing.JTextField txtapellido;
     private javax.swing.JTextField txtbalance;
