@@ -1,4 +1,4 @@
-package Countries;
+package guiCountries;
 
 import java.io.UnsupportedEncodingException;
 import java.util.Properties;
@@ -12,13 +12,13 @@ import javax.swing.JOptionPane;
 
 public class EnvioCorreo {
     
-    static final String FROM = "";
+    static final String FROM = "jamcrests@gmail.com";
     static final String FROMNAME = "Cartera Virtual";
-    static final String TO = "";
+    static final String TO = "jamcrests@gmail.com";
     
     
-    static final String SMTP_USERNAME = "";
-    static final String SMTP_PASSWORD = "";
+    static final String SMTP_USERNAME = "jamcrests@gmail.com";
+    static final String SMTP_PASSWORD = "*Welcome01";
     
     static final String CONFIGSET = "ConfigSet";
     
