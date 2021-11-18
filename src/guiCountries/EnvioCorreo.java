@@ -18,7 +18,7 @@ public class EnvioCorreo {
     
     
     static final String SMTP_USERNAME = "jamcrests@gmail.com";
-    static final String SMTP_PASSWORD = "*Welcome01";
+    static final String SMTP_PASSWORD = "*Welcome01*";
     
     static final String CONFIGSET = "ConfigSet";
     
