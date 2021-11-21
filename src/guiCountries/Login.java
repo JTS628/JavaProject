@@ -36,10 +36,10 @@ public class Login extends javax.swing.JFrame {
 
         jPanel1 = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
+        Txtusuario = new javax.swing.JTextField();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
-        jTextField2 = new javax.swing.JTextField();
+        Txtcontrasena = new javax.swing.JTextField();
         btnRegistro = new javax.swing.JButton();
         btnSalir = new javax.swing.JButton();
         btnIngresar = new javax.swing.JButton();
@@ -89,7 +89,7 @@ public class Login extends javax.swing.JFrame {
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(jLabel1)
                         .addGap(50, 50, 50)
-                        .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 178, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(Txtusuario, javax.swing.GroupLayout.PREFERRED_SIZE, 178, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel2)
@@ -98,7 +98,7 @@ public class Login extends javax.swing.JFrame {
                                 .addComponent(btnSalir)))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 178, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(Txtcontrasena, javax.swing.GroupLayout.PREFERRED_SIZE, 178, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(btnRegistro))))
                 .addContainerGap(157, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
@@ -116,11 +116,11 @@ public class Login extends javax.swing.JFrame {
                 .addGap(40, 40, 40)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel1)
-                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(Txtusuario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(41, 41, 41)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2)
-                    .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(Txtcontrasena, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(52, 52, 52)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnRegistro)
@@ -151,15 +151,49 @@ public class Login extends javax.swing.JFrame {
         Registro view = new Registro();
         view.setVisible(true);
         dispose();
-        
-        
-        
+    
     }//GEN-LAST:event_btnRegistroActionPerformed
 
     private void btnIngresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnIngresarActionPerformed
-        Menu view = new Menu();
-        view.setVisible(true);
-        dispose();
+        
+        String usuario = Txtusuario.getText();
+        String contrasena = Txtcontrasena.getText();
+        String admin = "admin";
+        
+        boolean esta = false;
+        
+        if (usuario.equals(admin)&& contrasena.equals(admin)){
+               esta = true;
+               Registro.rol = "1";
+            }
+        
+        
+            for ( int i = 0 ; i < Registro.listaUsuarios.size(); i++) {
+                if (Registro.listaUsuarios.get(i).getUsuario().equals(usuario)&& Registro.listaUsuarios.get(i).getContrasena().equals(contrasena)){
+                    esta = true;
+                    break;    
+               }else if (usuario.equals(admin)&& contrasena.equals(admin)){
+                   esta = true;
+                    Registro.listaUsuarios.get(i).getRol();
+                    break; 
+
+                }else{
+                    esta = false;
+                }
+             }
+        
+         if (esta){
+            JOptionPane.showMessageDialog(rootPane, "Bienbenido " );
+            Menu acceso = new Menu();
+            acceso.setVisible(true);
+            dispose();
+         }else {
+            JOptionPane.showMessageDialog(rootPane, "Usuario o contraseña incorrectos");
+            Txtusuario.setText("");
+            Txtcontrasena.setText("");
+        }
+             
+      
     }//GEN-LAST:event_btnIngresarActionPerformed
 
     /**
@@ -198,6 +232,8 @@ public class Login extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JTextField Txtcontrasena;
+    private javax.swing.JTextField Txtusuario;
     private javax.swing.JButton btnIngresar;
     private javax.swing.JButton btnRegistro;
     private javax.swing.JButton btnSalir;
@@ -205,7 +241,5 @@ public class Login extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
     // End of variables declaration//GEN-END:variables
 }

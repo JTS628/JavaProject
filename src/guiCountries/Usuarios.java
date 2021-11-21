@@ -9,9 +9,19 @@ public class Usuarios {
     String correo;
     String usuario;
     String contrasena;
-    String dia;
-    String mes;
-    String ano;
+    String rol;
+
+    public String getRol() {
+        return rol;
+    }
+
+    public void setRol(String rol) {
+        this.rol = rol;
+    }
+    
+    //String dia;
+    //String mes;
+    //String ano;
     
 
     public String getNombre() {
@@ -34,17 +44,17 @@ public class Usuarios {
         return contrasena;
     }
 
-    public String getDia() {
+   /* public String getDia() {
         return dia;
     }
 
-    public String getMes() {
+    /*public String getMes() {
         return mes;
     }
 
     public String getAno() {
         return ano;
-    }
+    }*/
 
     public void setNombre(String nombre) {
         this.nombre = nombre;
@@ -66,7 +76,7 @@ public class Usuarios {
         this.contrasena = contrasena;
     }
 
-    public void setDia(String dia) {
+    /*public void setDia(String dia) {
         this.dia = dia;
     }
 
@@ -76,7 +86,7 @@ public class Usuarios {
 
     public void setAno(String ano) {
         this.ano = ano;
-    }
+    }*/
     
    
 }
