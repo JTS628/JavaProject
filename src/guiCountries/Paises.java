@@ -212,11 +212,11 @@ private void servicio ()
         setBackground(new java.awt.Color(0, 0, 102));
         setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
 
-        jPanel1.setBackground(new java.awt.Color(0, 153, 51));
-        jPanel1.setBorder(javax.swing.BorderFactory.createMatteBorder(3, 3, 3, 3, new java.awt.Color(0, 255, 255)));
+        jPanel1.setBackground(new java.awt.Color(102, 102, 102));
+        jPanel1.setBorder(javax.swing.BorderFactory.createMatteBorder(3, 3, 3, 3, new java.awt.Color(0, 0, 0)));
 
-        jPanel2.setBackground(new java.awt.Color(0, 0, 51));
-        jPanel2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 153, 204), 2));
+        jPanel2.setBackground(new java.awt.Color(204, 204, 204));
+        jPanel2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(102, 0, 0), 2));
 
         jLabel2.setFont(new java.awt.Font("Yu Gothic UI Light", 1, 34)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 255, 0));
@@ -229,8 +229,9 @@ private void servicio ()
             }
         });
 
+        lblpais.setBackground(new java.awt.Color(153, 153, 153));
         lblpais.setFont(new java.awt.Font("Consolas", 1, 26)); // NOI18N
-        lblpais.setForeground(new java.awt.Color(204, 204, 204));
+        lblpais.setForeground(new java.awt.Color(0, 0, 0));
         lblpais.setText("Paises destino: ");
 
         listaS.addActionListener(new java.awt.event.ActionListener() {
@@ -240,11 +241,11 @@ private void servicio ()
         });
 
         jLabel1.setFont(new java.awt.Font("Consolas", 1, 26)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(204, 204, 204));
+        jLabel1.setForeground(new java.awt.Color(0, 0, 0));
         jLabel1.setText("Tipo de envio:");
 
         lblmonto.setFont(new java.awt.Font("Consolas", 1, 26)); // NOI18N
-        lblmonto.setForeground(new java.awt.Color(204, 204, 204));
+        lblmonto.setForeground(new java.awt.Color(0, 0, 0));
         lblmonto.setText("Monto a enviar: ");
 
         btnrefrescar.setFont(new java.awt.Font("Eras Bold ITC", 0, 14)); // NOI18N
@@ -272,7 +273,7 @@ private void servicio ()
         });
 
         lblmonto2.setFont(new java.awt.Font("Consolas", 1, 24)); // NOI18N
-        lblmonto2.setForeground(new java.awt.Color(51, 255, 255));
+        lblmonto2.setForeground(new java.awt.Color(0, 0, 0));
         lblmonto2.setText("Tarifa:");
 
         txttotal.addActionListener(new java.awt.event.ActionListener() {
@@ -282,7 +283,7 @@ private void servicio ()
         });
 
         lblmonto1.setFont(new java.awt.Font("Consolas", 1, 26)); // NOI18N
-        lblmonto1.setForeground(new java.awt.Color(102, 255, 102));
+        lblmonto1.setForeground(new java.awt.Color(0, 0, 0));
         lblmonto1.setText("Total a cancelar: ");
 
         jButton2.setForeground(new java.awt.Color(0, 51, 102));
@@ -301,7 +302,7 @@ private void servicio ()
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addContainerGap(103, Short.MAX_VALUE)
+                .addContainerGap(113, Short.MAX_VALUE)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
                         .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 492, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -380,7 +381,7 @@ private void servicio ()
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(16, 16, 16)
+                .addContainerGap()
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
@@ -396,15 +397,11 @@ private void servicio ()
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 269, Short.MAX_VALUE))
+            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 229, Short.MAX_VALUE))
+            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
 
         pack();

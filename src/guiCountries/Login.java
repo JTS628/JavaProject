@@ -23,6 +23,7 @@ public class Login extends javax.swing.JFrame {
         initComponents();
         this.setLocationRelativeTo(null);
         this.setTitle("Ventana de Inicio");
+        
     }
 
     /**
@@ -183,7 +184,7 @@ public class Login extends javax.swing.JFrame {
              }
         
          if (esta){
-            JOptionPane.showMessageDialog(rootPane, "Bienbenido " );
+            JOptionPane.showMessageDialog(rootPane, "Bienvenido " );
             Menu acceso = new Menu();
             acceso.setVisible(true);
             dispose();
