@@ -343,7 +343,9 @@ public class Registro extends javax.swing.JFrame {
         //txtmes.setText("");
         //txtano.setText("");
         
+        //EnvioCorreo email = new EnvioCorreo();
         
+                  
                
     }//GEN-LAST:event_btregistroActionPerformed
 

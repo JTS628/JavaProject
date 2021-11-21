@@ -10,8 +10,8 @@ import javax.mail.internet.InternetAddress;
 import javax.mail.internet.MimeMessage;
 import javax.swing.JOptionPane;
 
-public class EnvioCorreo {
-    
+public  class EnvioCorreo {
+        
     static final String FROM = "jamcrests@gmail.com";
     static final String FROMNAME = "Cartera Virtual";
     static final String TO = "jamcrests@gmail.com";
@@ -28,7 +28,7 @@ public class EnvioCorreo {
     
     static final String SUBJECT = "MENSAJE IMPORTANTE";
     
-    static final String BODY = "Mensaje de prueba para ver si funciona";
+    static final String BODY = "Mensaje de prueba para ver si funciona el login";
     
     
  
@@ -64,5 +64,55 @@ public class EnvioCorreo {
         }
         
     }
+
+    public EnvioCorreo() {
+    }
+   
+    public static String getFROM() {
+        return FROM;
+    }
+
+    public static String getFROMNAME() {
+        return FROMNAME;
+    }
+
+    public static String getTO() {
+        return TO;
+    }
+
+    public static String getSMTP_USERNAME() {
+        return SMTP_USERNAME;
+    }
+
+    public static String getSMTP_PASSWORD() {
+        return SMTP_PASSWORD;
+    }
+
+    public static String getCONFIGSET() {
+        return CONFIGSET;
+    }
+
+    public static String getHOST() {
+        return HOST;
+    }
+
+    public static int getPORT() {
+        return PORT;
+    }
+
+    public static String getSUBJECT() {
+        return SUBJECT;
+    }
+
+    public static String getBODY() {
+        return BODY;
+    }
     
-}
+    
+    }
+   
+
+
+
+
+
