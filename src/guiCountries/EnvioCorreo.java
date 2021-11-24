@@ -14,7 +14,10 @@ public  class EnvioCorreo {
         
     static final String FROM = "jamcrests@gmail.com";
     static final String FROMNAME = "Cartera Virtual";
-    static final String TO = "jamcrests@gmail.com";
+    private String TO; // = "jamcrests@gmail.com";
+    
+    public EnvioCorreo (String TO){
+        this.TO = TO;}
     
     
     static final String SMTP_USERNAME = "jamcrests@gmail.com";
@@ -32,7 +35,7 @@ public  class EnvioCorreo {
     
     
  
-    public static void main(String[] args) throws UnsupportedEncodingException, MessagingException {
+    public void enviarcorreo() throws UnsupportedEncodingException, MessagingException {
      
         Properties props = System.getProperties();
         props.put("mail.transport.protocol", "smtp");
@@ -76,9 +79,9 @@ public  class EnvioCorreo {
         return FROMNAME;
     }
 
-    public static String getTO() {
+    /*public static String getTO() {
         return TO;
-    }
+    }*/
 
     public static String getSMTP_USERNAME() {
         return SMTP_USERNAME;

@@ -1,9 +1,11 @@
 package guiCountries;
 
+import java.io.UnsupportedEncodingException;
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.Set;
+import javax.mail.MessagingException;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
@@ -310,7 +312,6 @@ public class Registro extends javax.swing.JFrame {
        
         Usuarios usu = new Usuarios();
                
-        
         usu.setNombre(nombre);
         usu.setApellido(apellido);
         usu.setCorreo(correo);
@@ -332,6 +333,13 @@ public class Registro extends javax.swing.JFrame {
         
         JOptionPane.showMessageDialog(rootPane,"Usuario agregado");
                 
+               
+        try {
+        EnvioCorreo mail = new EnvioCorreo(txtcorreo.getText());
+        mail.enviarcorreo();
+        
+        }catch(UnsupportedEncodingException | MessagingException e) {}
+        
         txtnombre.setText("");
         txtapellido.setText("");
         txtcorreo.setText("");
@@ -342,10 +350,7 @@ public class Registro extends javax.swing.JFrame {
         //txtdia.setText("");
         //txtmes.setText("");
         //txtano.setText("");
-        
-        //EnvioCorreo email = new EnvioCorreo();
-        
-                  
+                          
                
     }//GEN-LAST:event_btregistroActionPerformed
 
