@@ -3,26 +3,31 @@ package guiCountries;
 
 import static guiCountries.Registro.listaUsuarios;
 import java.util.ArrayList;
+import java.util.Date;
 import javax.swing.table.DefaultTableModel;
 
 
 public class NewtablaUsuarios extends javax.swing.JFrame {
 
    // ArrayList <Usuarios> newlistaUsuarios = new ArrayList();
-    DefaultTableModel t = new DefaultTableModel();
+    DefaultTableModel t;
     
     
      public NewtablaUsuarios() {
         initComponents();
-      
-            nuevaTabla.setModel(t);
-            t.addColumn("Nombre");
-            t.addColumn("Apellido");
-            t.addColumn("Correo");
-            t.addColumn("Usuario");
-            t.addColumn("Contraseña");
-        this.setTitle("Tabla de Usuarios");
-        cargarTabla ();
+        
+        this.setLocationRelativeTo(null);
+        this.setTitle("Reportes de usuarios");
+        listaUsuarios = new ArrayList<Usuarios>();
+        t = (DefaultTableModel) tblDatos.getModel();
+
+//            t.addColumn("Nombre");
+//            t.addColumn("Apellido");
+//            t.addColumn("Correo");
+//            t.addColumn("Usuario");
+//            t.addColumn("Contraseña");
+//        this.setTitle("Tabla de Usuarios");
+//        cargarTabla ();
 }
     
  
@@ -35,7 +40,7 @@ public void cargarTabla (){
                 listaUsuarios.get(i).getApellido(),
                 listaUsuarios.get(i).getCorreo(),
                 listaUsuarios.get(i).getUsuario(),
-                listaUsuarios.get(i).getContrasena(),
+//                listaUsuarios.get(i).getContrasena(),
                 listaUsuarios.get(i).getRol(),
                 
                 
@@ -49,22 +54,14 @@ public void cargarTabla (){
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jScrollPane1 = new javax.swing.JScrollPane();
-        nuevaTabla = new javax.swing.JTable();
         Btnmenu = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        tblDatos = new javax.swing.JTable();
+        btnCargar = new javax.swing.JButton();
+        btnEnviar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-
-        nuevaTabla.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-
-            },
-            new String [] {
-
-            }
-        ));
-        jScrollPane1.setViewportView(nuevaTabla);
 
         Btnmenu.setText("Volver a Registro");
         Btnmenu.addActionListener(new java.awt.event.ActionListener() {
@@ -80,6 +77,41 @@ public void cargarTabla (){
             }
         });
 
+        tblDatos.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null}
+            },
+            new String [] {
+                "Nombre", "Apellido", "Correo", "Usuario", "Roll"
+            }
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false, false
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        jScrollPane2.setViewportView(tblDatos);
+
+        btnCargar.setText("Cargar");
+        btnCargar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCargarActionPerformed(evt);
+            }
+        });
+
+        btnEnviar.setText("Enviar reporte ");
+        btnEnviar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnEnviarActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -87,25 +119,34 @@ public void cargarTabla (){
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(110, 110, 110)
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 1151, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(38, 38, 38)
+                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 782, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(433, 433, 433)
+                        .addGap(242, 242, 242)
                         .addComponent(Btnmenu, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(33, 33, 33)
-                        .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(120, Short.MAX_VALUE))
+                        .addGap(55, 55, 55)
+                        .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(281, 281, 281)
+                        .addComponent(btnCargar)
+                        .addGap(92, 92, 92)
+                        .addComponent(btnEnviar)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(73, 73, 73)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 713, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(67, 67, 67)
+                .addGap(50, 50, 50)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 276, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(38, 38, 38)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton2)
-                    .addComponent(Btnmenu))
-                .addContainerGap(85, Short.MAX_VALUE))
+                    .addComponent(btnCargar)
+                    .addComponent(btnEnviar))
+                .addGap(121, 121, 121)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(Btnmenu)
+                    .addComponent(jButton2))
+                .addContainerGap(154, Short.MAX_VALUE))
         );
 
         pack();
@@ -126,6 +167,16 @@ public void cargarTabla (){
        dispose();
        
     }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void btnCargarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCargarActionPerformed
+        
+        cargarTabla();
+    }//GEN-LAST:event_btnCargarActionPerformed
+
+    private void btnEnviarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEnviarActionPerformed
+        Reportes report = new Reportes("REPORTE DE REGISTROS", new Date().toString(), "C:\\Users\\Equipo3\\Documents\\Castro Carazo\\Segundo Cuatri\\Proga\\NetBeansProjects\\JavaProject\\src\\Imagenes\\Fondo Menu.jpg","C:\\Users\\Equipo3\\Documents\\Castro Carazo\\Segundo Cuatri\\Proga\\NetBeansProjects\\JavaProject\\src\\Imagenes\\motivacion1.jpg",listaUsuarios);
+        report.CrearReporte();
+    }//GEN-LAST:event_btnEnviarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -165,9 +216,11 @@ public void cargarTabla (){
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton Btnmenu;
+    private javax.swing.JButton btnCargar;
+    private javax.swing.JButton btnEnviar;
     private javax.swing.JButton jButton2;
-    private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTable nuevaTabla;
+    private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JTable tblDatos;
     // End of variables declaration//GEN-END:variables
 
     void setModel(DefaultTableModel t) {
