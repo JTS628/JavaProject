@@ -231,7 +231,6 @@ private void servicio ()
 
         lblpais.setBackground(new java.awt.Color(153, 153, 153));
         lblpais.setFont(new java.awt.Font("Consolas", 1, 26)); // NOI18N
-        lblpais.setForeground(new java.awt.Color(0, 0, 0));
         lblpais.setText("Paises destino: ");
 
         listaS.addActionListener(new java.awt.event.ActionListener() {
@@ -241,11 +240,9 @@ private void servicio ()
         });
 
         jLabel1.setFont(new java.awt.Font("Consolas", 1, 26)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(0, 0, 0));
         jLabel1.setText("Tipo de envio:");
 
         lblmonto.setFont(new java.awt.Font("Consolas", 1, 26)); // NOI18N
-        lblmonto.setForeground(new java.awt.Color(0, 0, 0));
         lblmonto.setText("Monto a enviar: ");
 
         btnrefrescar.setFont(new java.awt.Font("Eras Bold ITC", 0, 14)); // NOI18N
@@ -273,7 +270,6 @@ private void servicio ()
         });
 
         lblmonto2.setFont(new java.awt.Font("Consolas", 1, 24)); // NOI18N
-        lblmonto2.setForeground(new java.awt.Color(0, 0, 0));
         lblmonto2.setText("Tarifa:");
 
         txttotal.addActionListener(new java.awt.event.ActionListener() {
@@ -283,7 +279,6 @@ private void servicio ()
         });
 
         lblmonto1.setFont(new java.awt.Font("Consolas", 1, 26)); // NOI18N
-        lblmonto1.setForeground(new java.awt.Color(0, 0, 0));
         lblmonto1.setText("Total a cancelar: ");
 
         jButton2.setForeground(new java.awt.Color(0, 51, 102));
