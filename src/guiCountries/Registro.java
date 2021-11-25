@@ -44,7 +44,7 @@ public class Registro extends javax.swing.JFrame {
         this.setTitle("Registro de Usuarios");
         
     }
-   
+        
     /*public void cargarTabla (){
         t.setRowCount(0);
                 
