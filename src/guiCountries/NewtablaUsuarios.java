@@ -15,14 +15,14 @@ public class NewtablaUsuarios extends javax.swing.JFrame {
      public NewtablaUsuarios() {
         initComponents();
       
-            nuevaTabla.setModel(t);
+            /*tablaUsuarios.setModel(t);
             t.addColumn("Nombre");
             t.addColumn("Apellido");
             t.addColumn("Correo");
             t.addColumn("Usuario");
             t.addColumn("Contraseña");
         this.setTitle("Tabla de Usuarios");
-        cargarTabla ();
+        cargarTabla ();*/
 }
     
  
@@ -50,13 +50,13 @@ public void cargarTabla (){
     private void initComponents() {
 
         jScrollPane1 = new javax.swing.JScrollPane();
-        nuevaTabla = new javax.swing.JTable();
+        tablaUsuarios = new javax.swing.JTable();
         Btnmenu = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        nuevaTabla.setModel(new javax.swing.table.DefaultTableModel(
+        tablaUsuarios.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
@@ -64,7 +64,7 @@ public void cargarTabla (){
 
             }
         ));
-        jScrollPane1.setViewportView(nuevaTabla);
+        jScrollPane1.setViewportView(tablaUsuarios);
 
         Btnmenu.setText("Volver a Registro");
         Btnmenu.addActionListener(new java.awt.event.ActionListener() {
@@ -167,7 +167,7 @@ public void cargarTabla (){
     private javax.swing.JButton Btnmenu;
     private javax.swing.JButton jButton2;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTable nuevaTabla;
+    private javax.swing.JTable tablaUsuarios;
     // End of variables declaration//GEN-END:variables
 
     void setModel(DefaultTableModel t) {
