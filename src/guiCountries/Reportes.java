@@ -116,10 +116,10 @@ public class Reportes {
         documento.add(tabla);
         
         documento.add(Chunk.NEWLINE);
-//        BarcodeQRCode codigoqr = new BarcodeQRCode("Prueba de codigo QR", 1, 1, null);
-//        Image qrimagen = codigoqr.getImage();
-//        qrimagen.scalePercent(300);
-//        documento.add(qrimagen);
+        BarcodeQRCode codigoqr = new BarcodeQRCode("Prueba de codigo QR", 1, 1, null);
+        Image qrimagen = codigoqr.getImage();
+        qrimagen.scalePercent(300);
+        documento.add(qrimagen);
         
         documento.add(Chunk.NEWLINE);
         documento.add( new Paragraph("Fecha: " + fecha));
