@@ -1,6 +1,7 @@
 
 package guiCountries;
 
+import static guiCountries.AdminPais.listapaistarifa;
 import java.sql.*;
 import java.util.ArrayList;
 import javax.swing.JOptionPane;
@@ -22,6 +23,14 @@ public class Paises extends javax.swing.JFrame {
         //tarifa ();
         this.setLocationRelativeTo(null);
         this.setTitle("Transferencias De Dinero");
+        if (Registro.rol == "1"){
+            btnAgregarPais.setVisible(true);
+            
+        }else{btnAgregarPais.setVisible(false);
+             }
+        
+        
+        
     }
     
     /*private void combobox ()
@@ -69,7 +78,7 @@ private void servicio ()
      
     public void listapais (){
     
-        ArrayList pais = new ArrayList ();
+        /*ArrayList pais = new ArrayList ();
         
         pais.add("Argentina");
         pais.add("Belize");
@@ -98,7 +107,19 @@ private void servicio ()
         for (int i = 0 ; i < pais.size(); i++)            
         {listaP.addItem(pais.get(i) + "");
       
+        }*/
+        
+        for (int i = 0 ; i < listapaistarifa.size(); i++ ){
+        listaP.addItem(listapaistarifa.get(i).getPais());
+        
+        
+        
         }
+        
+        
+        
+        
+        
     }
         
     public void listaservicio () {
@@ -114,6 +135,40 @@ private void servicio ()
     }
 }
     
+    private void tarifaxpais () {
+    
+    
+    
+    }
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
    
     private void tarifa (){
         
@@ -126,16 +181,16 @@ private void servicio ()
         if (tipo.equals("Inmediato")){
         
         if ( v < 5000){
-        tar = 50;
+        tar = 20;
         }
         else if (v < 50000) {
-        tar = 100;
+        tar = 150;
         }
         else if (v < 500000){
-        tar = 200;
+        tar = 300;
         }
         else if (v < 100000){
-        tar = 400;}
+        tar = 600;}
         else {
         tar = 800;}
         
@@ -144,18 +199,18 @@ private void servicio ()
         
         else if (tipo.equals("Dia siguiente")){
             if ( v < 5000){
-        tar = 25;
+        tar = 5;
         }
         else if (v < 50000) {
-        tar = 75;
+        tar = 50;
         }
         else if (v < 500000){
-        tar = 125;
+        tar = 100;
         }
         else if (v < 100000){
-        tar = 225;}
+        tar = 250;}
         else {
-        tar = 425;}
+        tar = 0;}
             
         txttarifa.setText(tar + "");
         }
@@ -207,6 +262,7 @@ private void servicio ()
         lblmonto1 = new javax.swing.JLabel();
         jButton2 = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
+        btnAgregarPais = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(0, 0, 102));
@@ -297,6 +353,13 @@ private void servicio ()
         jButton3.setForeground(new java.awt.Color(153, 0, 0));
         jButton3.setText("Calcelar");
 
+        btnAgregarPais.setText("Agregar Pais");
+        btnAgregarPais.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAgregarPaisActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
@@ -334,7 +397,9 @@ private void servicio ()
                                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
                                         .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 94, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addGap(78, 78, 78)))
-                                .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(48, 48, 48)
+                                .addComponent(btnAgregarPais, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addGap(61, 61, 61))))
         );
         jPanel2Layout.setVerticalGroup(
@@ -372,7 +437,8 @@ private void servicio ()
                 .addGap(39, 39, 39)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnAgregarPais))
                 .addContainerGap(20, Short.MAX_VALUE))
         );
 
@@ -442,6 +508,15 @@ private void servicio ()
         dispose();
     }//GEN-LAST:event_jButton2ActionPerformed
 
+    private void btnAgregarPaisActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAgregarPaisActionPerformed
+         
+        AdminPais irapais = new AdminPais();
+        irapais.setVisible(true);
+        dispose();
+        
+        
+    }//GEN-LAST:event_btnAgregarPaisActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -478,6 +553,7 @@ private void servicio ()
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnAgregarPais;
     private javax.swing.JButton btnrefrescar;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;

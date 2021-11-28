@@ -37,6 +37,7 @@ public class Registro extends javax.swing.JFrame {
         //Addregistro();*/
         if (Registro.rol == "1"){
             Btntabla.setVisible(true);
+            
         }else{Btntabla.setVisible(false);
              }
         
