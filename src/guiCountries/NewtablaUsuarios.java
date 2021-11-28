@@ -142,12 +142,18 @@ public void cargarTabla (){
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        ReporteUsuarios crear = new ReporteUsuarios("",new Date().toString(),"C:/Users/JJ/OneDrive/Escritorio/U/Progra 1/Java Project/JavaProject/src/Imagenes/icono.png",listaUsuarios);
+        /*ReporteUsuarios crear = new ReporteUsuarios("",new Date().toString(),"C:/Users/JJ/OneDrive/Escritorio/U/Progra 1/Java Project/JavaProject/src/Imagenes/icono.png",listaUsuarios);
         
         try{
         crear.CrearReporte();
             
-        }catch(Exception e){};
+        }catch(Exception e){};*/
+        
+        NombreReporte pop = new NombreReporte();
+        pop.setVisible(true);
+        
+             
+        
         
     }//GEN-LAST:event_jButton1ActionPerformed
 

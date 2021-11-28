@@ -171,6 +171,7 @@ public class Login extends javax.swing.JFrame {
         
             for ( int i = 0 ; i < Registro.listaUsuarios.size(); i++) {
                 if (Registro.listaUsuarios.get(i).getUsuario().equals(usuario)&& Registro.listaUsuarios.get(i).getContrasena().equals(contrasena)){
+                    Registro.rol = Registro.listaUsuarios.get(i).getRol();
                     esta = true;
                     break;    
                }else if (usuario.equals(admin)&& contrasena.equals(admin)){

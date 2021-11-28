@@ -94,8 +94,8 @@ private void servicio ()
         pais.add("Sweden");
         pais.add("Uruguay");
        
-        int i;
-        for (i = 0 ; i < pais.size(); i++)            
+        
+        for (int i = 0 ; i < pais.size(); i++)            
         {listaP.addItem(pais.get(i) + "");
       
         }
