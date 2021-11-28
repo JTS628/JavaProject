@@ -102,23 +102,13 @@ private void servicio ()
         pais.add("Nigeria");
         pais.add("Sweden");
         pais.add("Uruguay");
-       
-        
         for (int i = 0 ; i < pais.size(); i++)            
         {listaP.addItem(pais.get(i) + "");
-      
         }*/
         
         for (int i = 0 ; i < listapaistarifa.size(); i++ ){
         listaP.addItem(listapaistarifa.get(i).getPais());
-        
-        
-        
         }
-        
-        
-        
-        
         
     }
         
@@ -135,44 +125,40 @@ private void servicio ()
     }
 }
     
-    private void tarifaxpais () {
-    
-    
-    
+    public void tarifaxpais () {
+            
+        int precio = Integer.parseInt(txtmonto.getText());
+        int tarifa = 0;
+        String pais = (String)listaP.getSelectedItem();
+        
+        for (int i = 0 ; i < listapaistarifa.size() ; i++ ){
+            if (pais.equals(listapaistarifa.get(i).getPais())){
+                    
+            if (precio < 100000){
+                tarifa = listapaistarifa.get(i).getTecho1();
+            }
+
+            else if (precio < 1000000){
+                tarifa = listapaistarifa.get(i).getTecho2();
+            }
+            else if (precio < 4999999){
+                tarifa = listapaistarifa.get(i).getTecho3();
+            }
+
+            else if (precio > 5000000){
+
+                JOptionPane.showMessageDialog(rootPane,"Monto de envio supera el maximo permitido. Favor ingrese un monto menor");
+                txtmonto.setText("");
+            }
+            txttarifa1.setText(tarifa +"");
+            }
+        }
+        
     }
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
    
-    private void tarifa (){
-        
-                    
+    private void tarifaservicio (){
+                  
         int v = Integer.parseInt(txtmonto.getText());
         int tar;
         
@@ -180,55 +166,57 @@ private void servicio ()
         
         if (tipo.equals("Inmediato")){
         
-        if ( v < 5000){
-        tar = 20;
+        if ( v < 100000){
+        tar = 110;
         }
-        else if (v < 50000) {
-        tar = 150;
+        else if (v < 1000000) {
+        tar = 500;
         }
-        else if (v < 500000){
-        tar = 300;
+        else if (v < 5000000){
+        tar = 1000;
         }
-        else if (v < 100000){
-        tar = 600;}
+        else if (v < 10000000){
+        tar = 3000;}
         else {
-        tar = 800;}
+        tar = 500000;}
         
         txttarifa.setText(tar + "");
         }
         
         else if (tipo.equals("Dia siguiente")){
-            if ( v < 5000){
+            if ( v < 100000){
         tar = 5;
         }
-        else if (v < 50000) {
+        else if (v < 1000000) {
         tar = 50;
         }
-        else if (v < 500000){
+        else if (v < 5000000){
         tar = 100;
         }
-        else if (v < 100000){
+        else if (v < 10000000){
         tar = 250;}
         else {
         tar = 0;}
             
         txttarifa.setText(tar + "");
         }
-        
     }
+    
     
     private void total (){
     
     int t = Integer.parseInt(txtmonto.getText());
     int t2 = Integer.parseInt(txttarifa.getText());
+    int t3 = Integer.parseInt(txttarifa1.getText());
     
-    int tot = t + t2;
+    int tot = t + t2 +t3;
     
     txttotal.setText(tot +"");
     
     }
     
     private void resetAmount (){
+    txttarifa1.setText("");    
     txtmonto.setText("");
     txttarifa.setText("");
     txttotal.setText("");
@@ -263,6 +251,8 @@ private void servicio ()
         jButton2 = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
         btnAgregarPais = new javax.swing.JButton();
+        lblmonto3 = new javax.swing.JLabel();
+        txttarifa1 = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(0, 0, 102));
@@ -330,7 +320,7 @@ private void servicio ()
 
         lblmonto2.setFont(new java.awt.Font("Consolas", 1, 24)); // NOI18N
         lblmonto2.setForeground(new java.awt.Color(0, 0, 0));
-        lblmonto2.setText("Tarifa:");
+        lblmonto2.setText("Tarifa por pais:");
 
         txttotal.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -360,6 +350,16 @@ private void servicio ()
             }
         });
 
+        lblmonto3.setFont(new java.awt.Font("Consolas", 1, 24)); // NOI18N
+        lblmonto3.setForeground(new java.awt.Color(0, 0, 0));
+        lblmonto3.setText("Tarifa por servicio:");
+
+        txttarifa1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txttarifa1ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
@@ -374,29 +374,31 @@ private void servicio ()
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 202, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                        .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                            .addComponent(lblmonto, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                            .addComponent(lblpais, javax.swing.GroupLayout.PREFERRED_SIZE, 247, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                                    .addComponent(lblmonto1, javax.swing.GroupLayout.PREFERRED_SIZE, 272, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGap(85, 85, 85)
-                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(txttarifa, javax.swing.GroupLayout.PREFERRED_SIZE, 245, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(btnrefrescar, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(txttotal, javax.swing.GroupLayout.PREFERRED_SIZE, 245, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(txtmonto, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(listaS, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(listaP, javax.swing.GroupLayout.PREFERRED_SIZE, 232, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                            .addGroup(jPanel2Layout.createSequentialGroup()
+                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                        .addComponent(lblmonto, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addComponent(lblpais, javax.swing.GroupLayout.PREFERRED_SIZE, 247, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addComponent(lblmonto1, javax.swing.GroupLayout.DEFAULT_SIZE, 272, Short.MAX_VALUE)
+                                    .addComponent(jButton1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(lblmonto2, javax.swing.GroupLayout.PREFERRED_SIZE, 233, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(lblmonto3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(jPanel2Layout.createSequentialGroup()
-                                        .addComponent(lblmonto2, javax.swing.GroupLayout.PREFERRED_SIZE, 154, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGap(168, 168, 168))
-                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                                        .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 94, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGap(78, 78, 78)))
+                                        .addGap(85, 85, 85)
+                                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(txttotal, javax.swing.GroupLayout.PREFERRED_SIZE, 245, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(txtmonto, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(listaS, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(listaP, javax.swing.GroupLayout.PREFERRED_SIZE, 232, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(txttarifa, javax.swing.GroupLayout.PREFERRED_SIZE, 245, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(txttarifa1, javax.swing.GroupLayout.PREFERRED_SIZE, 245, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                    .addGroup(jPanel2Layout.createSequentialGroup()
+                                        .addGap(32, 32, 32)
+                                        .addComponent(btnrefrescar, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                            .addGroup(jPanel2Layout.createSequentialGroup()
+                                .addGap(150, 150, 150)
+                                .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 94, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(78, 78, 78)
                                 .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(48, 48, 48)
                                 .addComponent(btnAgregarPais, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)))
@@ -415,31 +417,35 @@ private void servicio ()
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(listaS, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(62, 62, 62)
+                .addGap(80, 80, 80)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(txtmonto, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(lblmonto, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(90, 90, 90)
+                .addGap(55, 55, 55)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnrefrescar, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(52, 52, 52)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lblmonto2)
-                    .addComponent(txttarifa, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGap(44, 44, 44)
+                        .addGap(53, 53, 53)
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(lblmonto2)
+                            .addComponent(txttarifa1, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(18, 18, 18)
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(lblmonto3)
+                            .addComponent(txttarifa, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(18, 18, 18)
                         .addComponent(lblmonto1, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGap(35, 35, 35)
+                        .addGap(184, 184, 184)
                         .addComponent(txttotal, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(39, 39, 39)
+                .addGap(48, 48, 48)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnAgregarPais))
-                .addContainerGap(20, Short.MAX_VALUE))
+                .addContainerGap(25, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
@@ -488,7 +494,8 @@ private void servicio ()
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
 
-        tarifa ();
+        tarifaxpais ();
+        tarifaservicio ();
         total ();
         
                             
@@ -516,6 +523,10 @@ private void servicio ()
         
         
     }//GEN-LAST:event_btnAgregarPaisActionPerformed
+
+    private void txttarifa1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txttarifa1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txttarifa1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -565,11 +576,13 @@ private void servicio ()
     private javax.swing.JLabel lblmonto;
     private javax.swing.JLabel lblmonto1;
     private javax.swing.JLabel lblmonto2;
+    private javax.swing.JLabel lblmonto3;
     private javax.swing.JLabel lblpais;
     private javax.swing.JComboBox<String> listaP;
     private javax.swing.JComboBox<String> listaS;
     private javax.swing.JTextField txtmonto;
     private javax.swing.JTextField txttarifa;
+    private javax.swing.JTextField txttarifa1;
     private javax.swing.JTextField txttotal;
     // End of variables declaration//GEN-END:variables
 }
