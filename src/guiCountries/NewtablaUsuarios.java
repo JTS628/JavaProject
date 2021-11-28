@@ -3,7 +3,9 @@ package guiCountries;
 
 import static guiCountries.Registro.listaUsuarios;
 import java.util.ArrayList;
+import java.util.Date;
 import javax.swing.table.DefaultTableModel;
+
 
 
 public class NewtablaUsuarios extends javax.swing.JFrame {
@@ -21,6 +23,7 @@ public class NewtablaUsuarios extends javax.swing.JFrame {
             t.addColumn("Correo");
             t.addColumn("Usuario");
             t.addColumn("Contraseña");
+            t.addColumn("rol");
         this.setTitle("Tabla de Usuarios");
         cargarTabla ();
 }
@@ -53,6 +56,7 @@ public void cargarTabla (){
         nuevaTabla = new javax.swing.JTable();
         Btnmenu = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
+        jButton1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -80,6 +84,13 @@ public void cargarTabla (){
             }
         });
 
+        jButton1.setText("Reporte");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -93,7 +104,9 @@ public void cargarTabla (){
                         .addGap(433, 433, 433)
                         .addComponent(Btnmenu, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(33, 33, 33)
-                        .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(49, 49, 49)
+                        .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(120, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -104,7 +117,8 @@ public void cargarTabla (){
                 .addGap(67, 67, 67)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButton2)
-                    .addComponent(Btnmenu))
+                    .addComponent(Btnmenu)
+                    .addComponent(jButton1))
                 .addContainerGap(85, Short.MAX_VALUE))
         );
 
@@ -126,6 +140,16 @@ public void cargarTabla (){
        dispose();
        
     }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        ReporteUsuarios crear = new ReporteUsuarios("",new Date().toString(),"C:/Users/JJ/OneDrive/Escritorio/U/Progra 1/Java Project/JavaProject/src/Imagenes/icono.png",listaUsuarios);
+        
+        try{
+        crear.CrearReporte();
+            
+        }catch(Exception e){};
+        
+    }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -165,6 +189,7 @@ public void cargarTabla (){
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton Btnmenu;
+    private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable nuevaTabla;
