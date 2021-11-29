@@ -13,6 +13,7 @@ public class tablaTarifa {
     int techo2;
     int techo3;
     int techo4;
+    int tipocambio;
     
     public void setPais(String Pais) {
         this.Pais = Pais;
@@ -60,6 +61,14 @@ public class tablaTarifa {
 
     public String getMoneda() {
         return Moneda;
+    }
+    
+    public int getTipocambio() {
+        return tipocambio;
+    }
+
+    public void setTipocambio(int tipocambio) {
+        this.tipocambio = tipocambio;
     }
 }
 
