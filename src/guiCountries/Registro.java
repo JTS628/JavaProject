@@ -11,11 +11,7 @@ import javax.swing.table.DefaultTableModel;
 
 
 public class Registro extends javax.swing.JFrame {
-    /*Connection con = null;
-    PreparedStatement pst = null;
-    ResultSet rs = null;
-    ArrayList<Usuarios> datos = new ArrayList<Usuarios>();*/
-    
+       
     public static ArrayList <Usuarios> listaUsuarios = new ArrayList();
     public static String rol;
     //DefaultTableModel t = new DefaultTableModel();
@@ -31,9 +27,7 @@ public class Registro extends javax.swing.JFrame {
             t.addColumn("Usuario");
             t.addColumn("Contraseña");
             t.addColumn("rol");
-            //t.addColumn("Dia");
-           // t.addColumn("Mes");
-           // t.addColumn("Año");
+            
         //Addregistro();*/
         if (Registro.rol == "1"){
             Btntabla.setVisible(true);
@@ -184,9 +178,9 @@ public class Registro extends javax.swing.JFrame {
                 .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 204, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(260, 260, 260))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                .addGap(132, 132, 132)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(132, 132, 132)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -195,29 +189,29 @@ public class Registro extends javax.swing.JFrame {
                                     .addComponent(jLabel13, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(jLabel15)
                                     .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, 162, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 41, Short.MAX_VALUE)
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                     .addComponent(txtnombre, javax.swing.GroupLayout.Alignment.TRAILING)
                                     .addComponent(txtapellido, javax.swing.GroupLayout.Alignment.TRAILING)
                                     .addComponent(txtcontrasena, javax.swing.GroupLayout.Alignment.TRAILING)
                                     .addComponent(txtusuario, javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(txtcorreo, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 210, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(Radioadmin, javax.swing.GroupLayout.PREFERRED_SIZE, 89, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                    .addComponent(txtcorreo, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 210, javax.swing.GroupLayout.PREFERRED_SIZE)))
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addGap(52, 52, 52)
                                 .addComponent(jButton1)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 72, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(44, 44, 44)
+                                .addGap(28, 28, 28)
                                 .addComponent(btregistro, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(62, 62, 62))))
-                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
-                        .addGap(140, 140, 140)
+                                .addGap(62, 62, 62)))
+                        .addGap(148, 148, 148))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(231, 231, 231)
-                        .addComponent(Radiousu, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 0, Short.MAX_VALUE)))
-                .addGap(148, 148, 148))
+                        .addGap(113, 113, 113)
+                        .addComponent(Radioadmin, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(Radiousu, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 0, Short.MAX_VALUE))))
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(289, 289, 289)
                 .addComponent(Btntabla)
@@ -271,7 +265,7 @@ public class Registro extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 693, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -306,11 +300,6 @@ public class Registro extends javax.swing.JFrame {
                     
         }catch(Exception e){}
         
-        
-        //String dia = txtdia.getText();
-        //String mes = txtmes.getText();
-        //String ano = txtano.getText();
-       
         Usuarios usu = new Usuarios();
                
         usu.setNombre(nombre);
@@ -320,14 +309,6 @@ public class Registro extends javax.swing.JFrame {
         usu.setContrasena(contrasena);
         usu.setRol(rol);
 
-
-
-        
-        //usu.setDia(dia);
-        //usu.setMes(mes);
-        //usu.setAno(ano);
-       
-        
         listaUsuarios.add(usu);
             
         //cargarTabla ();
@@ -346,11 +327,7 @@ public class Registro extends javax.swing.JFrame {
         txtcorreo.setText("");
         txtusuario.setText("");
         txtcontrasena.setText("");
-        Radioadmin.setText("");
-        Radiousu.setText("");
-        //txtdia.setText("");
-        //txtmes.setText("");
-        //txtano.setText("");
+        
                           
                
     }//GEN-LAST:event_btregistroActionPerformed

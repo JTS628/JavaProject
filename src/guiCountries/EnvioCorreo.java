@@ -29,7 +29,7 @@ public  class EnvioCorreo {
     
     static final int PORT = 587;
     
-    static final String SUBJECT = "MENSAJE IMPORTANTE";
+    static final String SUBJECT = "Bienvenido al sistema de transferencias de dinero";
     
     static final String BODY = "Mensaje de prueba para ver si funciona el login";
     
@@ -60,7 +60,7 @@ public  class EnvioCorreo {
             transport.sendMessage(mg, mg.getAllRecipients());
             
         } catch (Exception e) {
-            JOptionPane.showMessageDialog(null, "Error");
+            JOptionPane.showMessageDialog(null, "Verifique los datos de correo ingresados");
             System.out.println(e.getMessage());
         }finally{
             transport.close();

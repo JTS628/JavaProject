@@ -8,6 +8,7 @@ package guiCountries;
 public class tablaTarifa {
     
     String Pais;
+    String Moneda;
     int techo1;
     int techo2;
     int techo3;
@@ -53,6 +54,12 @@ public class tablaTarifa {
     public int getTecho4() {
         return techo4;
     }
-    
+    public void setMoneda(String Moneda) {
+        this.Moneda = Moneda;
+    }
+
+    public String getMoneda() {
+        return Moneda;
+    }
 }
 
