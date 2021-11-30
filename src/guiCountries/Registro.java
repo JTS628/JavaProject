@@ -290,6 +290,7 @@ public class Registro extends javax.swing.JFrame {
         String usuario = txtusuario.getText();
         String contrasena = txtcontrasena.getText();
         String rol = "";
+        String fecha = "";
         
         try{ 
             if (Radioadmin.isSelected()){
@@ -300,6 +301,10 @@ public class Registro extends javax.swing.JFrame {
                     
         }catch(Exception e){}
         
+        Fecha nuevafecha = new Fecha();
+        fecha = nuevafecha.FechaActual();
+        
+        
         Usuarios usu = new Usuarios();
                
         usu.setNombre(nombre);
@@ -308,6 +313,8 @@ public class Registro extends javax.swing.JFrame {
         usu.setUsuario(usuario);
         usu.setContrasena(contrasena);
         usu.setRol(rol);
+        usu.setFecha(fecha);
+        
 
         listaUsuarios.add(usu);
             
@@ -339,6 +346,8 @@ public class Registro extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        Login alogin = new Login();
+        alogin.setVisible(true);
         dispose();
     }//GEN-LAST:event_jButton1ActionPerformed
 

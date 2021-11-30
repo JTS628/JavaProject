@@ -21,11 +21,7 @@ public class Paises extends javax.swing.JFrame {
         //tarifa ();
         this.setLocationRelativeTo(null);
         this.setTitle("Transferencias De Dinero");
-        if (Registro.rol == "1"){
-            btnAgregarPais.setVisible(true);
-            
-        }else{btnAgregarPais.setVisible(false);
-             }
+        
         
         
         

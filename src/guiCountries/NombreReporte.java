@@ -114,7 +114,11 @@ public class NombreReporte extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        ReporteUsuarios crear = new ReporteUsuarios(NombreArchivo.getText(),new Date().toString(),"C:/Users/JJ/OneDrive/Escritorio/U/Progra 1/Java Project/JavaProject/src/Imagenes/icono.png",listaUsuarios);
+        Fecha a = new Fecha ();
+        a.FechaActual();
+                
+        
+        ReporteUsuarios crear = new ReporteUsuarios(NombreArchivo.getText(),a.FechaActual()/*new Date().toString()*/,"C:/Users/JJ/OneDrive/Escritorio/U/Progra 1/Java Project/JavaProject/src/Imagenes/icono.png",listaUsuarios);
         
         try{
         crear.CrearReporte();

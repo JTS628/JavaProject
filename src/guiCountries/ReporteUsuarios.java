@@ -61,16 +61,16 @@ public class ReporteUsuarios {
               documento.add(imagen1);*/
               
               documento.add(Chunk.NEWLINE);
-              documento.add(new Paragraph(" Texto de prueba, para ser modificado posteriormente"));
+              documento.add(new Paragraph(""));
               documento.add(Chunk.NEWLINE);
-              Paragraph Texto = new Paragraph( "Texto 2");
+              Paragraph Texto = new Paragraph( "El documento es confidencial y puede ser utilizado por personal autorizado. Si recibio este documento por error, por favor informelo a las autoridades pertinentes");
                             Texto.setAlignment(Element.ALIGN_JUSTIFIED_ALL);
               documento.add(Texto);
               
               documento.add(Chunk.NEWLINE);
               documento.add(Chunk.NEWLINE);
               
-              PdfPTable Tabla = new PdfPTable(6);
+              PdfPTable Tabla = new PdfPTable(7);
               
               Tabla.setWidthPercentage(100);
               PdfPCell nombre = new PdfPCell (new Phrase("Nombre"));
@@ -78,23 +78,27 @@ public class ReporteUsuarios {
               
               Tabla.setWidthPercentage(100);
               PdfPCell apellido = new PdfPCell (new Phrase("Apellido"));
-              nombre.setBackgroundColor(BaseColor.LIGHT_GRAY);
+              apellido.setBackgroundColor(BaseColor.LIGHT_GRAY);
               
               Tabla.setWidthPercentage(100);
               PdfPCell correo = new PdfPCell (new Phrase("Correo"));
-              nombre.setBackgroundColor(BaseColor.LIGHT_GRAY);
+              correo.setBackgroundColor(BaseColor.LIGHT_GRAY);
               
               Tabla.setWidthPercentage(100);
               PdfPCell usuario = new PdfPCell (new Phrase("Usuario"));
-              nombre.setBackgroundColor(BaseColor.LIGHT_GRAY);
+              usuario.setBackgroundColor(BaseColor.LIGHT_GRAY);
               
               Tabla.setWidthPercentage(100);
               PdfPCell contra = new PdfPCell (new Phrase("Contraseña"));
-              nombre.setBackgroundColor(BaseColor.LIGHT_GRAY);
+              contra.setBackgroundColor(BaseColor.LIGHT_GRAY);
               
               Tabla.setWidthPercentage(100);
               PdfPCell rol = new PdfPCell (new Phrase("Rol"));
-              nombre.setBackgroundColor(BaseColor.LIGHT_GRAY);
+              rol.setBackgroundColor(BaseColor.LIGHT_GRAY);
+              
+              Tabla.setWidthPercentage(100);
+              PdfPCell fecha = new PdfPCell (new Phrase("Fecha"));
+              fecha.setBackgroundColor(BaseColor.LIGHT_GRAY);
               
               Tabla.addCell(nombre);
               Tabla.addCell(apellido);
@@ -102,6 +106,7 @@ public class ReporteUsuarios {
               Tabla.addCell(usuario);
               Tabla.addCell(contra);
               Tabla.addCell(rol);
+              Tabla.addCell(fecha);
               
               for (Usuarios p : listaUsuarios){
                    Tabla.addCell(p.getNombre());
@@ -110,6 +115,8 @@ public class ReporteUsuarios {
                    Tabla.addCell(p.getUsuario());
                    Tabla.addCell(p.getContrasena());
                    Tabla.addCell(p.getRol());
+                   Tabla.addCell(p.getFecha());
+                   
               }  
               documento.add(Tabla);
               

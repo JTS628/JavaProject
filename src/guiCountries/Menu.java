@@ -26,9 +26,13 @@ public class Menu extends javax.swing.JFrame {
         
         if (Registro.rol == "1"){
             btnreporte.setVisible(true);
+            Btnpais.setVisible(true);
                     
         }else{
-            btnreporte.setVisible(false);}
+            btnreporte.setVisible(false);
+            Btnpais.setVisible(false);}
+            
+        
         
         
         this.setLocationRelativeTo(null);
@@ -53,7 +57,7 @@ public class Menu extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         btnreporte = new javax.swing.JButton();
-        jButton1 = new javax.swing.JButton();
+        Btnpais = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -101,10 +105,10 @@ public class Menu extends javax.swing.JFrame {
             }
         });
 
-        jButton1.setText("Agregar paises");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        Btnpais.setText("Agregar paises");
+        Btnpais.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                BtnpaisActionPerformed(evt);
             }
         });
 
@@ -136,7 +140,7 @@ public class Menu extends javax.swing.JFrame {
                                 .addGap(203, 203, 203)
                                 .addComponent(btnreporte, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(44, 44, 44)
-                                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                                .addComponent(Btnpais, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE)))))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         PanelMenuLayout.setVerticalGroup(
@@ -161,7 +165,7 @@ public class Menu extends javax.swing.JFrame {
                     .addComponent(btnAtras)
                     .addGroup(PanelMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(btnreporte)
-                        .addComponent(jButton1)))
+                        .addComponent(Btnpais)))
                 .addGap(32, 32, 32))
         );
 
@@ -198,20 +202,25 @@ public class Menu extends javax.swing.JFrame {
     }//GEN-LAST:event_btnAtrasActionPerformed
 
     private void btnreporteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnreporteActionPerformed
-        NewtablaUsuarios rep = new NewtablaUsuarios();
+        /*NewtablaUsuarios rep = new NewtablaUsuarios();
         rep.setVisible(true);
+        dispose();*/
+        
+        PanelReportes open = new PanelReportes();
+        open.setVisible(true);
         dispose();
+        
         
         
         
     }//GEN-LAST:event_btnreporteActionPerformed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void BtnpaisActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnpaisActionPerformed
         AdminPais irapais = new AdminPais();
         irapais.setVisible(true);
         dispose();
         
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_BtnpaisActionPerformed
 
     /**
      * @param args the command line arguments
@@ -249,12 +258,12 @@ public class Menu extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton Btnpais;
     private javax.swing.JPanel PanelMenu;
     private javax.swing.JButton btnAtras;
     private javax.swing.JButton btnCuenta;
     private javax.swing.JButton btnTransferencias;
     private javax.swing.JButton btnreporte;
-    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;

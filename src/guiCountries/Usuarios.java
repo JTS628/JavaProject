@@ -10,6 +10,15 @@ public class Usuarios {
     String usuario;
     String contrasena;
     String rol;
+    String fecha;
+
+    public void setFecha(String fecha) {
+        this.fecha = fecha;
+    }
+
+    public String getFecha() {
+        return fecha;
+    }
 
     public String getRol() {
         return rol;

@@ -23,7 +23,8 @@ public class NewtablaUsuarios extends javax.swing.JFrame {
             t.addColumn("Correo");
             t.addColumn("Usuario");
             t.addColumn("Contraseña");
-            t.addColumn("rol");
+            t.addColumn("Rol");
+            t.addColumn("Fecha");
         this.setTitle("Tabla de Usuarios");
         cargarTabla ();
 }
@@ -40,6 +41,7 @@ public void cargarTabla (){
                 listaUsuarios.get(i).getUsuario(),
                 listaUsuarios.get(i).getContrasena(),
                 listaUsuarios.get(i).getRol(),
+                listaUsuarios.get(i).getFecha(),
                 
                 
                // listaUsuarios.get(i).getDia(),

@@ -24,6 +24,37 @@ public class Fecha extends javax.swing.JFrame {
     public Fecha() {
         initComponents();
     }
+    
+    
+    public String FechaActual (){
+        String fechaActual ="";
+        
+        try{
+            
+            Date fecha = new Date ();
+            SimpleDateFormat formatofecha = new SimpleDateFormat ("dd-MM-yy HH:mm");
+           // Txtfecha.setText(formatofecha.format(fecha));
+            
+           Calendar calendario = Calendar.getInstance();
+           calendario.setTime(fecha);
+           
+           String dia = calendario.getDisplayName(Calendar.DAY_OF_WEEK, Calendar.LONG, new Locale("es","ES"));
+           int ano = calendario.get(Calendar.YEAR);
+           int mes = calendario.get(Calendar.MONTH);
+           int diaM = calendario.get(Calendar.DAY_OF_MONTH);
+           int hora = calendario.get(Calendar.HOUR);
+           int minuto = calendario.get(Calendar.MINUTE); 
+           int segundo = calendario.get(Calendar.SECOND);
+        
+            fechaActual = dia+"/"+diaM+"/"+mes+"/"+ano+"- "+hora+":"+minuto;
+                                   
+        }catch(Exception e){};
+        
+       return fechaActual;
+    }
+    
+    
+    
 
     /**
      * This method is called from within the constructor to initialize the form.
