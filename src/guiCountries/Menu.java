@@ -115,7 +115,7 @@ public class Menu extends javax.swing.JFrame {
                     .addGroup(PanelMenuLayout.createSequentialGroup()
                         .addGap(143, 143, 143)
                         .addComponent(jLabel2)
-                        .addGap(155, 155, 155)
+                        .addGap(165, 165, 165)
                         .addComponent(jLabel3))
                     .addGroup(PanelMenuLayout.createSequentialGroup()
                         .addGap(21, 21, 21)
@@ -125,7 +125,7 @@ public class Menu extends javax.swing.JFrame {
                                 .addComponent(btnAtras, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(263, 263, 263)
                                 .addComponent(btnreporte, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)))))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(207, Short.MAX_VALUE))
         );
         PanelMenuLayout.setVerticalGroup(
             PanelMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)

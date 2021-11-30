@@ -120,6 +120,12 @@ public class Registro extends javax.swing.JFrame {
             }
         });
 
+        txtusuario.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtusuarioActionPerformed(evt);
+            }
+        });
+
         jLabel11.setFont(new java.awt.Font("Candara", 0, 18)); // NOI18N
         jLabel11.setText("Correo electronico:");
 
@@ -369,6 +375,10 @@ public class Registro extends javax.swing.JFrame {
 //        ira.setVisible(true);
 //        dispose();
     }//GEN-LAST:event_btnTablaActionPerformed
+
+    private void txtusuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtusuarioActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtusuarioActionPerformed
 
     /**
      * @param args the command line arguments
