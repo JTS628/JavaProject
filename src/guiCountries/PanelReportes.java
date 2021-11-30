@@ -43,6 +43,11 @@ public class PanelReportes extends javax.swing.JFrame {
         });
 
         Btntransacciones.setText("Reporte de Transacciones");
+        Btntransacciones.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BtntransaccionesActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -77,6 +82,12 @@ public class PanelReportes extends javax.swing.JFrame {
         rep.setVisible(true);
         dispose();
     }//GEN-LAST:event_BtnusuariosActionPerformed
+
+    private void BtntransaccionesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtntransaccionesActionPerformed
+        reportetransferencia nuevoreporte = new reportetransferencia();
+        nuevoreporte.setVisible(true);
+        dispose();
+    }//GEN-LAST:event_BtntransaccionesActionPerformed
 
     /**
      * @param args the command line arguments
