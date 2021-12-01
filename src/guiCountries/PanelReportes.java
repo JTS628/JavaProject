@@ -84,7 +84,7 @@ public class PanelReportes extends javax.swing.JFrame {
     }//GEN-LAST:event_BtnusuariosActionPerformed
 
     private void BtntransaccionesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtntransaccionesActionPerformed
-        reportetransferencia nuevoreporte = new reportetransferencia();
+        Tablatransferencia nuevoreporte = new Tablatransferencia();
         nuevoreporte.setVisible(true);
         dispose();
     }//GEN-LAST:event_BtntransaccionesActionPerformed

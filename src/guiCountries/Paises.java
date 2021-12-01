@@ -3,10 +3,13 @@ package guiCountries;
 
 import static guiCountries.AdminPais.listapaistarifa;
 import static guiCountries.AdminPais.listatipocambio;
+import static guiCountries.Registro.listaUsuarios;
+import java.io.UnsupportedEncodingException;
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.Set;
+import javax.mail.MessagingException;
 import javax.swing.JOptionPane;
 
 
@@ -625,7 +628,24 @@ public class Paises extends javax.swing.JFrame {
         txttarifa1.setText("");
         txttotal.setText("");
         
+        JOptionPane.showMessageDialog(rootPane, "Transferencia enviada satisfactoriamente");
+                  
         
+                
+         for (int i = 0 ; i < listaUsuarios.size(); i++ ){
+             String transcorreo = listaUsuarios.get(i).getCorreo().toString();
+             
+             
+             try {
+                 
+                CorreoTransferencia mailtransf = new CorreoTransferencia(transcorreo);
+                mailtransf.enviarcorreotransf();
+                JOptionPane.showMessageDialog(rootPane, "Correo de confirmacion enviado a: " + transcorreo);
+
+            }catch(UnsupportedEncodingException | MessagingException e) {}
+             
+         }
+         
     }//GEN-LAST:event_jButton4ActionPerformed
 
     /**
