@@ -9,12 +9,13 @@ import javax.swing.JOptionPane;
 public class Paises extends javax.swing.JFrame {
     
     
-
+    int numeroTransaccion;
+    
     Connection con = null;
     PreparedStatement pst = null;
     ResultSet rs = null;
-    ArrayList <String> listaPaises = new ArrayList <>();
-       
+    ArrayList <Pais> listaPaises = new ArrayList <Pais>();
+      
     public Paises() {
         initComponents();
         listapais ();
@@ -25,7 +26,6 @@ public class Paises extends javax.swing.JFrame {
         this.setLocationRelativeTo(null);
         this.setTitle("Transferencias De Dinero");
     }
-    
     /*private void combobox ()
     {
         try{
@@ -60,45 +60,27 @@ private void servicio ()
             
             
             }
-            
-        
+
         }catch (Exception ex){
         
             JOptionPane.showMessageDialog(null, ex);
         }
-    
+
     }*/
      
     public void listapais (){
     
-        ArrayList pais = new ArrayList ();
         
-        pais.add("Argentina");
-        pais.add("Belize");
-        pais.add("Bolivia");
-        pais.add("Brazil");
-        pais.add("Canada");
-        pais.add("Chile");
-        pais.add("China");
-        pais.add("Colombia");
-        pais.add("Costa Rica");
-        pais.add("Cuba");
-        pais.add("Ecuador");
-        pais.add("El Salvador");
-        pais.add("Estados unidos");
-        pais.add("Francia");
-        pais.add("Guatemala");
-        pais.add("Italia");
-        pais.add("Jamaica");
-        pais.add("Japan");
-        pais.add("Mexico");
-        pais.add("Nigeria");
-        pais.add("Sweden");
-        pais.add("Uruguay");
+        
+        listaPaises.add(new Pais("Argentina", 10));
+        listaPaises.add(new Pais("Colombia",15));
+        listaPaises.add(new Pais("Costa Rica", 25));
+        listaPaises.add(new Pais("Estados unidos", 5));
+        listaPaises.add(new Pais("Mexico", 10));
        
         int i;
-        for (i = 0 ; i < pais.size(); i++)            
-        {listaP.addItem(pais.get(i) + "");
+        for (i = 0 ; i < listaPaises.size(); i++)            
+        {listaP.addItem(listaPaises.get(i).getNombrePais() + "");
       
         }
     }
@@ -115,13 +97,13 @@ private void servicio ()
         
     }
 }
-    
-   
+
     private void tarifa (){
         
                     
         int v = Integer.parseInt(txtmonto.getText());
-        int tar;
+        int pSelect=listaP.getSelectedIndex();
+        int tar= 0;
         
         String tipo = (String) listaS.getSelectedItem();
         
@@ -141,7 +123,7 @@ private void servicio ()
         else {
         tar = 800;}
         
-        txttarifa.setText(tar + "");
+        
         }
         
         else if (tipo.equals("Dia siguiente")){
@@ -159,8 +141,10 @@ private void servicio ()
         else {
         tar = 425;}
             
-        txttarifa.setText(tar + "");
+        
         }
+        tar+= listaPaises.get(pSelect).getTarifa();
+        txttarifa.setText(tar + "");
         
     }
     
