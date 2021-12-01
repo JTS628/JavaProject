@@ -17,7 +17,7 @@ import javax.swing.JTextField;
  */
 public class Login extends javax.swing.JFrame {
 
-
+    public static String usuario;
     
     public Login() {
         initComponents();
@@ -191,6 +191,7 @@ public class Login extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(rootPane, "Bienvenido " );
             Menu acceso = new Menu();
             acceso.setVisible(true);
+            this.usuario = usuario;
             dispose();
          }else {
             JOptionPane.showMessageDialog(rootPane, "Usuario o contraseña incorrectos");

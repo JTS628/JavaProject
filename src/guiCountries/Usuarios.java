@@ -11,6 +11,7 @@ public class Usuarios {
     String contrasena;
     String rol;
     String fecha;
+    int saldo = 0;
 
     public void setFecha(String fecha) {
         this.fecha = fecha;
@@ -96,6 +97,14 @@ public class Usuarios {
     public void setAno(String ano) {
         this.ano = ano;
     }*/
+
+    public int getSaldo() {
+        return saldo;
+    }
+
+    public void setSaldo(int saldo) {
+        this.saldo = saldo;
+    }
     
    
 }

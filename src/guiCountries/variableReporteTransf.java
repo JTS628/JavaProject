@@ -11,6 +11,7 @@ package guiCountries;
  */
 public class variableReporteTransf {
     
+    String usuario;
     String paisdestino;
     String tipoenvio;
     String monedaenvio;
@@ -82,6 +83,14 @@ public class variableReporteTransf {
 
     public void setMonedaenvio(String monedaenvio) {
         this.monedaenvio = monedaenvio;
+    }
+
+    public String getUsuario() {
+        return usuario;
+    }
+
+    public void setUsuario(String usuario) {
+        this.usuario = usuario;
     }
     
         

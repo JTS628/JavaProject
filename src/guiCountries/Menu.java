@@ -192,7 +192,9 @@ public class Menu extends javax.swing.JFrame {
     }//GEN-LAST:event_btnTransferenciasActionPerformed
 
     private void btnCuentaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCuentaActionPerformed
-        // TODO add your handling code here:
+        Mi_Cuenta view = new Mi_Cuenta();
+        view.setVisible(true);
+        dispose();
     }//GEN-LAST:event_btnCuentaActionPerformed
 
     private void btnAtrasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAtrasActionPerformed
@@ -208,11 +210,7 @@ public class Menu extends javax.swing.JFrame {
         
         PanelReportes open = new PanelReportes();
         open.setVisible(true);
-        dispose();
-        
-        
-        
-        
+        dispose();   
     }//GEN-LAST:event_btnreporteActionPerformed
 
     private void BtnpaisActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnpaisActionPerformed

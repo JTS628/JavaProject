@@ -18,6 +18,18 @@ public class Registro extends javax.swing.JFrame {
      
     public Registro() {
         initComponents();
+        Usuarios usu = new Usuarios();
+               
+        usu.setNombre("a");
+        usu.setApellido("a");
+        usu.setCorreo("a");
+        usu.setUsuario("a");
+        usu.setContrasena("a");
+        usu.setRol("1");
+        usu.setFecha("a");
+        
+
+        listaUsuarios.add(usu);
         //tablaUsuarios NewtablaUsuarios = new NewtablaUsuarios();
         
         /*tablaUsuarios.setModel(t);
