@@ -54,31 +54,22 @@
               <Group type="102" attributes="0">
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" alignment="0" attributes="0">
-                          <EmptySpace min="-2" pref="146" max="-2" attributes="0"/>
-                          <Component id="jButton1" min="-2" pref="106" max="-2" attributes="0"/>
-                          <EmptySpace min="-2" pref="39" max="-2" attributes="0"/>
-                          <Component id="jButton2" min="-2" pref="112" max="-2" attributes="0"/>
-                      </Group>
-                      <Group type="102" alignment="0" attributes="0">
+                          <EmptySpace min="-2" pref="22" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Group type="102" alignment="0" attributes="0">
-                                  <EmptySpace min="-2" pref="22" max="-2" attributes="0"/>
-                                  <Group type="103" groupAlignment="0" attributes="0">
-                                      <Group type="103" groupAlignment="1" attributes="0">
-                                          <Component id="txtTarifa2" min="-2" pref="242" max="-2" attributes="0"/>
-                                          <Component id="txtTarifa1" min="-2" pref="242" max="-2" attributes="0"/>
-                                          <Component id="txtpais" min="-2" pref="242" max="-2" attributes="0"/>
-                                      </Group>
-                                      <Group type="103" alignment="0" groupAlignment="1" max="-2" attributes="0">
-                                          <Component id="jLabel3" alignment="0" max="32767" attributes="0"/>
-                                          <Component id="txtTarifa3" alignment="0" pref="178" max="32767" attributes="0"/>
-                                      </Group>
-                                  </Group>
-                              </Group>
-                              <Group type="102" alignment="0" attributes="0">
-                                  <EmptySpace min="-2" pref="32" max="-2" attributes="0"/>
+                                  <EmptySpace min="-2" pref="10" max="-2" attributes="0"/>
                                   <Component id="jLabel2" min="-2" pref="131" max="-2" attributes="0"/>
                               </Group>
+                              <Group type="103" groupAlignment="1" attributes="0">
+                                  <Component id="txtTarifa2" min="-2" pref="242" max="-2" attributes="0"/>
+                                  <Component id="txtTarifa1" min="-2" pref="242" max="-2" attributes="0"/>
+                                  <Component id="txtpais" min="-2" pref="242" max="-2" attributes="0"/>
+                              </Group>
+                              <Group type="103" alignment="0" groupAlignment="1" max="-2" attributes="0">
+                                  <Component id="jLabel3" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="txtTarifa3" alignment="0" pref="178" max="32767" attributes="0"/>
+                              </Group>
+                              <Component id="jLabel4" alignment="0" min="-2" pref="222" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
@@ -91,6 +82,12 @@
                               <Component id="TxtISO" alignment="0" min="-2" pref="88" max="-2" attributes="0"/>
                               <Component id="Texttipocambio" alignment="0" min="-2" pref="85" max="-2" attributes="0"/>
                           </Group>
+                      </Group>
+                      <Group type="102" alignment="0" attributes="0">
+                          <EmptySpace min="-2" pref="144" max="-2" attributes="0"/>
+                          <Component id="jButton1" min="-2" pref="106" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="35" max="-2" attributes="0"/>
+                          <Component id="jButton2" min="-2" pref="112" max="-2" attributes="0"/>
                       </Group>
                   </Group>
                   <EmptySpace pref="43" max="32767" attributes="0"/>
@@ -112,37 +109,38 @@
                       <Component id="jLabel2" alignment="3" min="-2" pref="30" max="-2" attributes="0"/>
                       <Component id="TxtISO" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Group type="102" attributes="0">
-                          <Component id="txtTarifa1" min="-2" pref="29" max="-2" attributes="0"/>
+                      <Group type="102" alignment="0" attributes="0">
+                          <EmptySpace type="separate" min="29" max="32767" attributes="0"/>
+                          <Component id="Tarifa3" min="-2" max="-2" attributes="0"/>
                           <EmptySpace type="separate" max="-2" attributes="0"/>
+                          <Component id="Texttipocambio" min="-2" max="-2" attributes="0"/>
                       </Group>
-                      <Group type="102" alignment="1" attributes="0">
-                          <Component id="Tarifa1" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace min="-2" pref="8" max="-2" attributes="0"/>
+                      <Group type="102" alignment="0" attributes="0">
+                          <EmptySpace min="-2" pref="24" max="-2" attributes="0"/>
+                          <Component id="jLabel4" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace type="separate" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="3" attributes="0">
+                              <Component id="txtTarifa1" alignment="3" min="-2" pref="29" max="-2" attributes="0"/>
+                              <Component id="Tarifa1" alignment="3" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="3" attributes="0">
+                              <Component id="txtTarifa2" alignment="3" min="-2" pref="36" max="-2" attributes="0"/>
+                              <Component id="Tarifa2" alignment="3" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <EmptySpace min="-2" pref="14" max="-2" attributes="0"/>
+                          <Component id="txtTarifa3" min="-2" pref="29" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="27" max="-2" attributes="0"/>
+                          <Component id="jLabel3" max="32767" attributes="0"/>
                       </Group>
                   </Group>
-                  <Group type="103" groupAlignment="1" attributes="0">
-                      <Component id="txtTarifa2" min="-2" pref="36" max="-2" attributes="0"/>
-                      <Component id="Tarifa2" min="-2" max="-2" attributes="0"/>
-                  </Group>
-                  <EmptySpace type="separate" max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="txtTarifa3" alignment="3" min="-2" pref="29" max="-2" attributes="0"/>
-                      <Component id="Tarifa3" alignment="3" min="-2" max="-2" attributes="0"/>
-                  </Group>
-                  <EmptySpace type="separate" max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="jLabel3" alignment="3" max="32767" attributes="0"/>
-                      <Component id="Texttipocambio" alignment="3" min="-2" max="-2" attributes="0"/>
-                  </Group>
-                  <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="33" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="jButton1" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="jButton2" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace min="-2" pref="24" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="21" max="-2" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -155,17 +153,17 @@
         </Component>
         <Component class="javax.swing.JLabel" name="txtTarifa1">
           <Properties>
-            <Property name="text" type="java.lang.String" value="0 - 100 000:"/>
+            <Property name="text" type="java.lang.String" value="0 - 100 000 CRC:"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="txtTarifa2">
           <Properties>
-            <Property name="text" type="java.lang.String" value="101 000 - 1 000 000"/>
+            <Property name="text" type="java.lang.String" value="101 000 - 1 000 000 CRC:"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="txtTarifa3">
           <Properties>
-            <Property name="text" type="java.lang.String" value="1 000 0001 - 4 999 999"/>
+            <Property name="text" type="java.lang.String" value="1 000 0001 - 4 999 999 CRC:"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JTextField" name="nomPais">
@@ -219,6 +217,11 @@
           </Properties>
         </Component>
         <Component class="javax.swing.JTextField" name="Texttipocambio">
+        </Component>
+        <Component class="javax.swing.JLabel" name="jLabel4">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Ingrese la tabla de precios en Colones"/>
+          </Properties>
         </Component>
       </SubComponents>
     </Container>
