@@ -17,6 +17,7 @@ public class Tablatransferencia extends javax.swing.JFrame {
     public Tablatransferencia() {
         initComponents();
         Tabletransferencia.setModel(r);
+            r.addColumn("Usuario");
             r.addColumn("Pais Destino");
             r.addColumn("Servicio");
             r.addColumn("Moneda de Envio");
@@ -35,6 +36,7 @@ public class Tablatransferencia extends javax.swing.JFrame {
         
         for (int i = 0; i < reptranf.size(); i++ ){
             r.addRow(new Object[]{
+             reptranf.get(i).getUsuario(),
              reptranf.get(i).getPaisdestino(),
              reptranf.get(i).getTipoenvio(),
              reptranf.get(i).getMonedaenvio(),
@@ -127,7 +129,9 @@ public class Tablatransferencia extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        // TODO add your handling code here:
+        NombreReporteTransferencia r = new NombreReporteTransferencia ();
+        r.setVisible(true);
+        dispose();
     }//GEN-LAST:event_jButton2ActionPerformed
 
     /**

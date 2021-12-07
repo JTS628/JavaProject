@@ -18,7 +18,7 @@ public class Registro extends javax.swing.JFrame {
      
     public Registro() {
         initComponents();
-        Usuarios usu = new Usuarios();
+        /*Usuarios usu = new Usuarios();
                
         usu.setNombre("a");
         usu.setApellido("a");
@@ -339,12 +339,17 @@ public class Registro extends javax.swing.JFrame {
         EnvioCorreo mail = new EnvioCorreo(txtcorreo.getText());
         mail.enviarcorreo();
         
-        for (int i =0; i<listaUsuarios.size();i++){
-        String a = listaUsuarios.get(i).getCorreo();
+        JOptionPane.showMessageDialog(rootPane, "confirmacion enviada a : " + txtcorreo.getText());
         
-        JOptionPane.showMessageDialog(rootPane, "confirmacion enviada a : " + a);
-        }
+        /*for (int i =0; i<listaUsuarios.size();i++){
+            
+            String a = listaUsuarios.get(i).getCorreo();
+            JOptionPane.showMessageDialog(rootPane, "confirmacion enviada a : " + a);
+            
+        }*/
         }catch(UnsupportedEncodingException | MessagingException e) {}
+        
+        
         
         txtnombre.setText("");
         txtapellido.setText("");

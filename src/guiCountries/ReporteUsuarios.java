@@ -19,6 +19,7 @@ import com.itextpdf.text.pdf.PdfPTable;
 import java.util.HashSet;
 import java.util.Set;
 import javax.swing.JOptionPane;
+import static guiCountries.Paises.reptranf;
 
 
 
@@ -161,14 +162,18 @@ public class ReporteUsuarios {
               documento.add(Chunk.NEWLINE);
               documento.add(new Paragraph(""));
               documento.add(Chunk.NEWLINE);
-              Paragraph Texto = new Paragraph( "El documento es confidencial y puede ser utilizado por personal autorizado. Si recibio este documento por error, por favor informelo a las autoridades pertinentes");
+              Paragraph Texto = new Paragraph( "El documento es confidencial y solo debe ser utilizado por personal autorizado. Si recibio este documento por error, por favor informelo a las autoridades pertinentes");
                             Texto.setAlignment(Element.ALIGN_JUSTIFIED_ALL);
               documento.add(Texto);
               
               documento.add(Chunk.NEWLINE);
               documento.add(Chunk.NEWLINE);
               
-              PdfPTable Tabla = new PdfPTable(7);
+              PdfPTable Tabla = new PdfPTable(8);
+              
+              Tabla.setWidthPercentage(100);
+              PdfPCell usuario = new PdfPCell (new Phrase("Usuario"));
+              usuario.setBackgroundColor(BaseColor.LIGHT_GRAY);
               
               Tabla.setWidthPercentage(100);
               PdfPCell paisdestino = new PdfPCell (new Phrase("Pais Destino"));
@@ -198,6 +203,7 @@ public class ReporteUsuarios {
               PdfPCell fecha = new PdfPCell (new Phrase("Fecha"));
               fecha.setBackgroundColor(BaseColor.LIGHT_GRAY);
               
+              Tabla.addCell(usuario);
               Tabla.addCell(paisdestino);
               Tabla.addCell(tipoenvio);
               Tabla.addCell(monto);
@@ -206,14 +212,15 @@ public class ReporteUsuarios {
               Tabla.addCell(totalenv);
               Tabla.addCell(fecha);
               
-              for (Usuarios p : listaUsuarios){
-                   Tabla.addCell(p.getNombre());
-                   Tabla.addCell(p.getApellido());
-                   Tabla.addCell(p.getCorreo());
-                   Tabla.addCell(p.getUsuario());
-                   Tabla.addCell(p.getContrasena());
-                   Tabla.addCell(p.getRol());
-                   Tabla.addCell(p.getFecha());
+              for ( variableReporteTransf f : reptranf){
+                   Tabla.addCell(f.getUsuario());
+                   Tabla.addCell(f.getPaisdestino());
+                   Tabla.addCell(f.getTipoenvio());
+                   Tabla.addCell(f.getMontoenv() + "");
+                   Tabla.addCell(f.getTarifdest()+ "");
+                   Tabla.addCell(f.getTarifserv()+ "");
+                   Tabla.addCell(f.getTottransf()+ "");
+                   Tabla.addCell(f.getFecha());
                    
               }  
               documento.add(Tabla);
@@ -234,7 +241,7 @@ public class ReporteUsuarios {
              documento.close();
 
 
-            JOptionPane.showMessageDialog(null, "Reporte creado");
+            JOptionPane.showMessageDialog(null, "Reporte de transferencias generado");
           
           }catch(Exception e){}
     }
