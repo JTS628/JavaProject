@@ -72,21 +72,21 @@ public void cargarTabla (){
         ));
         jScrollPane1.setViewportView(nuevaTabla);
 
-        Btnmenu.setText("Volver a Registro");
+        Btnmenu.setText("Volver");
         Btnmenu.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 BtnmenuActionPerformed(evt);
             }
         });
 
-        jButton2.setText("Volver a Menu");
+        jButton2.setText("Ir a Menu");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton2ActionPerformed(evt);
             }
         });
 
-        jButton1.setText("Reporte");
+        jButton1.setText("Procesar Reporte");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
@@ -108,7 +108,7 @@ public void cargarTabla (){
                         .addGap(33, 33, 33)
                         .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(49, 49, 49)
-                        .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(120, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -128,10 +128,11 @@ public void cargarTabla (){
     }// </editor-fold>//GEN-END:initComponents
 
     private void BtnmenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnmenuActionPerformed
-        
-       Registro regreso = new Registro();
-       regreso.setVisible(true);
+       PanelReportes v = new PanelReportes();
+       v.setVisible(true);
        dispose();
+        
+    
         
                 
     }//GEN-LAST:event_BtnmenuActionPerformed
