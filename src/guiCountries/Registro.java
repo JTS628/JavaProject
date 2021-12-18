@@ -333,6 +333,10 @@ public class Registro extends javax.swing.JFrame {
         //cargarTabla ();
         
         JOptionPane.showMessageDialog(rootPane,"Usuario agregado");
+        
+        for (int i = 0 ; i < listaUsuarios.size();i++){
+            System.out.println(i);
+        }
                 
                
         try {
