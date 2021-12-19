@@ -20,6 +20,7 @@ public class NombreReporte extends javax.swing.JFrame {
      */
     public NombreReporte() {
         initComponents();
+        this.setTitle("Nombre reporte de registro");
                 
     }
 
@@ -40,7 +41,10 @@ public class NombreReporte extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
+        jPanel1.setBackground(new java.awt.Color(0, 0, 51));
+
         jLabel1.setFont(new java.awt.Font("Georgia", 0, 14)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("Nombre del Archivo:");
 
         jButton1.setText("Aceptar");
@@ -108,15 +112,17 @@ public class NombreReporte extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        NewtablaUsuarios p = new NewtablaUsuarios ();
+        p.setVisible(true);
         dispose();
         
         
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        Menu n = new Menu ();
-        n.setVisible(true);
-        
+        NewtablaUsuarios p = new NewtablaUsuarios ();
+        p.setVisible(true);
+                
         
         Fecha a = new Fecha ();
         a.FechaActual();
