@@ -1,7 +1,6 @@
 package guiCountries;
 
 import java.io.UnsupportedEncodingException;
-import java.sql.*;
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.Set;
@@ -342,9 +341,7 @@ public class Registro extends javax.swing.JFrame {
         
         for (int i = 0 ; i < listaUsuarios.size();i++){
             System.out.println(i);
-        }
-                
-               
+        }     
         try {
         EnvioCorreo mail = new EnvioCorreo(txtcorreo.getText());
         mail.enviarcorreo();
@@ -358,17 +355,12 @@ public class Registro extends javax.swing.JFrame {
             
         }*/
         }catch(UnsupportedEncodingException | MessagingException e) {}
-        
-        
-        
+
         txtnombre.setText("");
         txtapellido.setText("");
         txtcorreo.setText("");
         txtusuario.setText("");
-        txtcontrasena.setText("");
-        
-                          
-               
+        txtcontrasena.setText("");          
     }//GEN-LAST:event_btregistroActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
@@ -387,48 +379,12 @@ public class Registro extends javax.swing.JFrame {
         NewtablaUsuarios ira = new NewtablaUsuarios();
         ira.setVisible(true);
         dispose();
-                     
-        
+
     }//GEN-LAST:event_BtntablaActionPerformed
 
     private void RadioadminActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RadioadminActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_RadioadminActionPerformed
-
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Registro.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Registro.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Registro.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Registro.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
-
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new Registro().setVisible(true);
-            }
-        });
-    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton Btntabla;

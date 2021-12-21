@@ -42,11 +42,6 @@ public void cargarTabla (){
                 listaUsuarios.get(i).getContrasena(),
                 listaUsuarios.get(i).getRol(),
                 listaUsuarios.get(i).getFecha(),
-                
-                
-               // listaUsuarios.get(i).getDia(),
-                //listaUsuarios.get(i).getMes(),
-                //listaUsuarios.get(i).getAno(),
         });
         }    
 }
@@ -149,18 +144,13 @@ public void cargarTabla (){
     private void BtnmenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnmenuActionPerformed
        PanelReportes v = new PanelReportes();
        v.setVisible(true);
-       dispose();
-        
-    
-        
-                
+       dispose();         
     }//GEN-LAST:event_BtnmenuActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
        Menu v = new Menu();
        v.setVisible(true);
-       dispose();
-       
+       dispose();  
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
@@ -174,47 +164,8 @@ public void cargarTabla (){
         NombreReporte pop = new NombreReporte();
         pop.setVisible(true);
         dispose();
-        
-             
-        
-        
     }//GEN-LAST:event_jButton1ActionPerformed
 
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(NewtablaUsuarios.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(NewtablaUsuarios.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(NewtablaUsuarios.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(NewtablaUsuarios.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
-        //</editor-fold>
-
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new NewtablaUsuarios().setVisible(true);
-            }
-        });
-    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton Btnmenu;
