@@ -17,8 +17,10 @@ public class Registro extends javax.swing.JFrame {
      
     public Registro() {
         initComponents();
+        this.setLocationRelativeTo(null);
+        this.setTitle("Registro de Usuarios"); 
         /*Usuarios usu = new Usuarios();
-               
+              
         usu.setNombre("a");
         usu.setApellido("a");
         usu.setCorreo("a");
@@ -40,14 +42,13 @@ public class Registro extends javax.swing.JFrame {
             t.addColumn("rol");
             
         //Addregistro();*/
-        if (Registro.rol == "1"){
-            Btntabla.setVisible(true);
-            
-        }else{Btntabla.setVisible(false);
-             }
+//        if (Registro.rol == "1"){
+//            Btntabla.setVisible(true);
+//            
+//        }else{Btntabla.setVisible(false);
+//             }
         
-        this.setLocationRelativeTo(null);
-        this.setTitle("Registro de Usuarios");
+        
         
     }
    
@@ -94,7 +95,6 @@ public class Registro extends javax.swing.JFrame {
         jButton1 = new javax.swing.JButton();
         btregistro = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
-        Btntabla = new javax.swing.JButton();
         Radioadmin = new javax.swing.JRadioButton();
         Radiousu = new javax.swing.JRadioButton();
         jLabel2 = new javax.swing.JLabel();
@@ -167,13 +167,6 @@ public class Registro extends javax.swing.JFrame {
             }
         });
 
-        Btntabla.setText("Tabla Usuarios");
-        Btntabla.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                BtntablaActionPerformed(evt);
-            }
-        });
-
         buttonGroup1.add(Radioadmin);
         Radioadmin.setFont(new java.awt.Font("sansserif", 0, 14)); // NOI18N
         Radioadmin.setForeground(new java.awt.Color(255, 255, 255));
@@ -230,13 +223,8 @@ public class Registro extends javax.swing.JFrame {
                 .addGap(118, 118, 118))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addComponent(Btntabla)
-                        .addGap(61, 61, 61))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 204, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(197, 197, 197))))
+                .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 204, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(197, 197, 197))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -273,9 +261,7 @@ public class Registro extends javax.swing.JFrame {
                     .addComponent(jButton3)
                     .addComponent(btregistro)
                     .addComponent(jButton1))
-                .addGap(58, 58, 58)
-                .addComponent(Btntabla)
-                .addGap(17, 17, 17))
+                .addGap(103, 103, 103))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -375,19 +361,11 @@ public class Registro extends javax.swing.JFrame {
         dispose();
     }//GEN-LAST:event_jButton1ActionPerformed
 
-    private void BtntablaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtntablaActionPerformed
-        NewtablaUsuarios ira = new NewtablaUsuarios();
-        ira.setVisible(true);
-        dispose();
-
-    }//GEN-LAST:event_BtntablaActionPerformed
-
     private void RadioadminActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RadioadminActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_RadioadminActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton Btntabla;
     private javax.swing.JRadioButton Radioadmin;
     private javax.swing.JRadioButton Radiousu;
     private javax.swing.JButton btregistro;

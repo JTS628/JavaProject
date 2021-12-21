@@ -9,6 +9,7 @@ public class ReportePersonal extends javax.swing.JFrame {
      */
     public ReportePersonal() {
         initComponents();
+        this.setLocation(null);
     }
 
     @SuppressWarnings("unchecked")
@@ -25,6 +26,7 @@ public class ReportePersonal extends javax.swing.JFrame {
 
         jPanel1.setBackground(new java.awt.Color(0, 0, 51));
 
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("Ingrese el nombre del reporte ");
 
         jButton1.setText("Volver");
@@ -90,9 +92,7 @@ public class ReportePersonal extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-         Tablatransferencia n = new Tablatransferencia ();
-        n.setVisible(true);
-        
+ 
         Fecha b = new Fecha ();
         b.FechaActual();
                 
@@ -100,7 +100,7 @@ public class ReportePersonal extends javax.swing.JFrame {
         ReporteUsuarios crearRepTransferencia = new ReporteUsuarios(txtNombreReport.getText(),b.FechaActual()/*new Date().toString()*/,"C:/Users/JJ/OneDrive/Escritorio/U/Progra 1/Java Project/JavaProject/src/Imagenes/icono.png",listaUsuarios);
         
         try{
-        crearRepTransferencia.ReporteTrasferencia();
+        crearRepTransferencia.ReporteP();
             
         }catch(Exception e){};
         

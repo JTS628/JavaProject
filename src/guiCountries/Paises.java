@@ -25,6 +25,10 @@ public class Paises extends javax.swing.JFrame {
         //vermoneda ();
         this.setLocationRelativeTo(null);
         this.setTitle("Transferencias De Dinero"); 
+        txttarifa.setEnabled(false);
+        txttarifa1.setEnabled(false);
+        txttotal.setEnabled(false);
+        jButton4.setEnabled(false);
     }
      
     public void listapais (){
@@ -537,8 +541,9 @@ public class Paises extends javax.swing.JFrame {
             if (listaUsuarios.get(i).getUsuario().equalsIgnoreCase(Login.usuario)) {
                 int totcan = Integer.parseInt(txttotal.getText());
                 //verifica que el monto que se va a rebajar de la cuenta no exceda la cantidad de saldo disponible
-                if (totcan < listaUsuarios.get(i).getSaldo()) {
+                if (totcan <= listaUsuarios.get(i).getSaldo()) {
                     reportetrans();
+                    listaUsuarios.get(i).setSaldo(listaUsuarios.get(i).getSaldo()-totcan);
 
                     //reportetransferencia procesar = new reportetransferencia ();
                     txtmonto.setText("");
@@ -604,6 +609,7 @@ public class Paises extends javax.swing.JFrame {
         tarifaxpais ();
         tarifaservicio ();
         total ();
+        jButton4.setEnabled(true);
         }catch(Exception e){
         JOptionPane.showMessageDialog(null, "Verique los datos ingresados he intente de nuevo");
         }

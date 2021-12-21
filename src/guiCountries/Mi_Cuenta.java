@@ -22,6 +22,7 @@ public class Mi_Cuenta extends javax.swing.JFrame {
         cargarRepTranf();
         setUsuario();
         setlbSaldo();
+        setlbSaldoDolares();
     }
 
     @SuppressWarnings("unchecked")

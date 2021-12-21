@@ -9,6 +9,7 @@ public class NombreReporte extends javax.swing.JFrame {
     public NombreReporte() {
         initComponents();
         this.setTitle("Nombre reporte de registro");
+        this.setLocation(null);
                 
     }
 

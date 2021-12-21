@@ -7,6 +7,7 @@ public class PanelReportes extends javax.swing.JFrame {
 
     public PanelReportes() {
         initComponents();
+        this.setLocation(null);
     }
 
     @SuppressWarnings("unchecked")

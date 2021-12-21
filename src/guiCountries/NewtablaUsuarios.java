@@ -26,6 +26,7 @@ public class NewtablaUsuarios extends javax.swing.JFrame {
             t.addColumn("Rol");
             t.addColumn("Fecha");
         this.setTitle("Tabla de Usuarios");
+        this.setLocation(null);
         cargarTabla ();
 }
     

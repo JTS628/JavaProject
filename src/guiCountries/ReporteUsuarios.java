@@ -297,35 +297,35 @@ public class ReporteUsuarios {
             Tabla.addCell(fecha);
 
             for (variableReporteTransf f : reptranf) {
-                for (int i = 0; i < reptranf.size(); i++) {
-                    if (reptranf.get(i).getUsuario().equalsIgnoreCase(Login.usuario)) {
-                        Tabla.addCell(f.getPaisdestino());
-                        Tabla.addCell(f.getTipoenvio());
-                        Tabla.addCell(f.getMontoenv() + "");
-                        Tabla.addCell(f.getTarifdest() + "");
-                        Tabla.addCell(f.getTarifserv() + "");
-                        Tabla.addCell(f.getTottransf() + "");
-                        Tabla.addCell(f.getFecha());
-                    }
+                if (f.getUsuario().equalsIgnoreCase(Login.usuario)) {
+                    Tabla.addCell(f.getPaisdestino());
+                    Tabla.addCell(f.getTipoenvio());
+                    Tabla.addCell(f.getMontoenv() + "");
+                    Tabla.addCell(f.getTarifdest() + "");
+                    Tabla.addCell(f.getTarifserv() + "");
+                    Tabla.addCell(f.getTottransf() + "");
+                    Tabla.addCell(f.getFecha());
                 }
-            }    
-                documento.add(Tabla);
 
-                BarcodeQRCode codigoqr = new BarcodeQRCode("Texto Barcode de Prueba", 1, 1, null);
-                Image imagenQR = codigoqr.getImage();
-                imagenQR.scaleAbsolute(100, 100);
-                documento.add(imagenQR);
+            }
+            documento.add(Tabla);
 
-                documento.add(Chunk.NEWLINE);
+            BarcodeQRCode codigoqr = new BarcodeQRCode("Texto Barcode de Prueba", 1, 1, null);
+            Image imagenQR = codigoqr.getImage();
+            imagenQR.scaleAbsolute(100, 100);
+            documento.add(imagenQR);
 
-                documento.add(new Paragraph(Fecha));
+            documento.add(Chunk.NEWLINE);
 
-                documento.add(Chunk.NEWLINE);
+            documento.add(new Paragraph(Fecha));
 
-                documento.close();
+            documento.add(Chunk.NEWLINE);
 
-                JOptionPane.showMessageDialog(null, "Reporte de transferencias generado");
+            documento.close();
 
-            }catch(Exception e){}
+            JOptionPane.showMessageDialog(null, "Reporte de transferencias generado");
+
+        } catch (Exception e) {
         }
     }
+}
