@@ -9,7 +9,7 @@ public class cambiotarifas extends javax.swing.JFrame {
     
     public cambiotarifas() {
         initComponents();
-        this.setLocation(null);
+        this.setLocationRelativeTo(null);
     }
 
    

@@ -10,7 +10,7 @@ public class Fecha extends javax.swing.JFrame {
 
     public Fecha() {
         initComponents();
-        this.setLocation(null);
+        this.setLocationRelativeTo(null);
     }
 
     public String FechaActual() {

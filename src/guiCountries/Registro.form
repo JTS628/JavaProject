@@ -93,7 +93,10 @@
                                   <Component id="txtcorreo" alignment="1" min="-2" pref="210" max="-2" attributes="0"/>
                               </Group>
                               <Group type="102" alignment="0" attributes="0">
-                                  <Component id="Radioadmin" min="-2" pref="114" max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="1" attributes="0">
+                                      <Component id="Btntabla" min="-2" max="-2" attributes="0"/>
+                                      <Component id="Radioadmin" min="-2" pref="114" max="-2" attributes="0"/>
+                                  </Group>
                                   <EmptySpace type="separate" max="-2" attributes="0"/>
                                   <Component id="Radiousu" min="-2" pref="108" max="-2" attributes="0"/>
                               </Group>
@@ -161,7 +164,9 @@
                       <Component id="btregistro" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="jButton1" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace min="-2" pref="103" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="31" max="-2" attributes="0"/>
+                  <Component id="Btntabla" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="44" max="-2" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -310,6 +315,11 @@
               <Color blue="ff" green="ff" red="ff" type="rgb"/>
             </Property>
             <Property name="text" type="java.lang.String" value="Perfil:"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JButton" name="Btntabla">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Tabla de usuarios"/>
           </Properties>
         </Component>
       </SubComponents>

@@ -4,7 +4,7 @@ public class ConfirmaciondeTransferencia extends javax.swing.JFrame {
 
     public ConfirmaciondeTransferencia() {
         initComponents();
-        this.setLocation(null);
+        this.setLocationRelativeTo(null);
     }
 
     @SuppressWarnings("unchecked")

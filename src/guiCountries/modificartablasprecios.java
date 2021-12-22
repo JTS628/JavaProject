@@ -22,7 +22,7 @@ public class modificartablasprecios extends javax.swing.JFrame {
         o.addColumn("Tarifa3");
         
         this.setTitle("Tabla de Cambio de Tarifas");
-        this.setLocation(null);
+        this.setLocationRelativeTo(null);
         cambiotarifa();
         
     }

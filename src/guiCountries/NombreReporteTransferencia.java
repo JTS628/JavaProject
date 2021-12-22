@@ -7,7 +7,7 @@ public class NombreReporteTransferencia extends javax.swing.JFrame {
     public NombreReporteTransferencia() {
         initComponents();
         this.setTitle("Nombre de reporte de transacciones");
-        this.setLocation(null);
+        this.setLocationRelativeTo(null);
     }
 
     @SuppressWarnings("unchecked")

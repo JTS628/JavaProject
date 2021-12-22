@@ -9,7 +9,7 @@ public class ReportePersonal extends javax.swing.JFrame {
      */
     public ReportePersonal() {
         initComponents();
-        this.setLocation(null);
+        this.setLocationRelativeTo(null);
     }
 
     @SuppressWarnings("unchecked")

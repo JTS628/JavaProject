@@ -23,7 +23,7 @@ public class Tablatransferencia extends javax.swing.JFrame {
             r.addColumn("Fecha de transaccion");
         this.setTitle("Tabla de Transferencias");
         cargarRepTranf ();
-        this.setLocation(null);
+        this.setLocationRelativeTo(null);
         }
     
     public void cargarRepTranf (){
